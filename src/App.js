@@ -5,11 +5,11 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      This is the beginning of GiveHelp, our digital Case Management App
+      <h1> This the beginning of GiveHelp, our digital Case Management App</h1>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          GiveCard Presents: GiveHelp
+          <h2>GiveCard Presents: GiveHelp</h2>
         </p>
         <a
           className="App-link"
