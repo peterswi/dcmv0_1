@@ -20,6 +20,31 @@ function App() {
           Visit GiveCard
         </a>
       </header>
+        <body><!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDi5gs5uJ-BQBnmOY3MxW56m_6GlnzKVDs",
+    authDomain: "givecard-dcm.firebaseapp.com",
+    databaseURL: "https://givecard-dcm.firebaseio.com",
+    projectId: "givecard-dcm",
+    storageBucket: "givecard-dcm.appspot.com",
+    messagingSenderId: "252395130688",
+    appId: "1:252395130688:web:e17255fe0353cefefbb4a5",
+    measurementId: "G-ZRXDQVKKPB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+        </body>
     </div>
   );
 }
