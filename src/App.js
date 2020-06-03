@@ -20,8 +20,6 @@ function App() {
           Visit GiveCard
         </a>
       </header>
-        <body>
-
     </div>
   );
 }
