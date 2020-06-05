@@ -9,12 +9,13 @@ class App extends Component {
     constructor() {
         super();
         this.state= {
-            speed: 10
+            speed: 'hello'
         };
     }
+
     componentDidMount(){
-       const rootRef =firebase.database().ref().child('react');
-       const speedRef =rootRef.child('speed');
+       const rootRef = firebase.database().ref();
+       const speedRef = rootRef.child('test');
        speedRef.on('value',snap=>{
             this.setState({
                 speed: snap.val()
@@ -22,8 +23,7 @@ class App extends Component {
        });
     }
 
-    render()
-    {
+    render(){
         return (
             <div className="App">
                 <h1> This the beginning of GiveHelp, our digital Case Management App</h1>
@@ -33,7 +33,7 @@ class App extends Component {
                         <h2>GiveCard Presents: GiveHelp</h2>
                     </p>
                     <p>
-                        <h2>React+firebase test: {this.state.speed} </h2>
+                        <h2>React+firebase test: {this.state.speed}  </h2>
                     </p>
                     <a
                         className="App-link"

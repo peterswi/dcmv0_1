@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#GiveHelp
+##Version 0.1 of GiveCard's Digital Case Management Application
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). <br/>
+Backend in [Firebase](https://firebase.google.com/).
 
 ## Available Scripts
 
