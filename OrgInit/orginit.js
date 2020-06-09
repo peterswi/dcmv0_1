@@ -1,5 +1,6 @@
 var db = firebase.firestore();
 
+
 function storeData() {
 
   var inputOrgID = document.getElementById("OrgID").value;
@@ -17,4 +18,15 @@ function storeData() {
      .catch(function(error) {
         console.error("Error writing doc", error);
      });
+}
+
+function clearField() {
+    document.getElementById("OrgID").value="";
+    document.getElementById("OrgName").value="";
+    document.getElementById("Passcode").value="";
+}
+
+function submitEvent(){
+    storeData();
+    clearField();
 }

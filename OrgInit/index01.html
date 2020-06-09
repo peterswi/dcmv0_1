@@ -8,12 +8,13 @@
 
 <div class="main-form">
  <h1 id="orgInit">GiveHelp Organization Creation</h1>
-    Organization ID: <input type="text" placeholder="Org ID: " id="OrgID"><br /><br />
-    Organization Name: <input type="text" placeholder="Org Name: " id="OrgName"><br /><br />
-    Passcode: <input type="text" placeholder="Passcode: " id="Passcode"><br /><br />
+    Organization ID: <input type="text" placeholder="Enter Org ID" id="OrgID"><br /><br />
+    Organization Name: <input type="text" placeholder="Enter Org Name" id="OrgName"><br /><br />
+    Passcode: <input type="text" placeholder="Enter Passcode" id="Passcode"><br /><br />
 
 <br /><br />
- <button id="saveButton" onclick="storeData()" >Submit</button>
+ <button id="saveButton" onclick="submitEvent()">Submit</button>
+
 </div>
 
 <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -42,6 +43,7 @@
 </script>
 
 <script src="orginit.js"></script>
+
 
 </body>
 </html>
