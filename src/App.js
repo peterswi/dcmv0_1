@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import * as firebase from 'firebase';
+import User from './user'
 
 class App extends Component {
 //building this constructor and component did mount to grow within the app. Still missing something
@@ -35,6 +36,10 @@ class App extends Component {
                     <p>
                         <h2>React+firebase test: {this.state.speed}  </h2>
                     </p>
+                    <p>
+                        Add User:
+                    </p>
+
                     <a
                         className="App-link"
                         href="https://www.givecard.io/"
@@ -43,6 +48,7 @@ class App extends Component {
                     >
                         Visit GiveCard
                     </a>
+
                 </header>
             </div>
         );
