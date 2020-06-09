@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GiveHelp: Org Init</title>
+</head>
+<body>
+
+<div class="main-form">
+ <h1 id="orgInit">GiveHelp Organization Creation</h1>
+    Organization ID: <input type="text" placeholder="Org ID: " id="OrgID"><br /><br />
+    Organization Name: <input type="text" placeholder="Org Name: " id="OrgName"><br /><br />
+    Passcode: <input type="text" placeholder="Passcode: " id="Passcode"><br /><br />
+
+<br /><br />
+ <button id="saveButton" onclick="storeData()" >Submit</button>
+</div>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+
+<!--  Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDi5gs5uJ-BQBnmOY3MxW56m_6GlnzKVDs",
+    authDomain: "givecard-dcm.firebaseapp.com",
+    databaseURL: "https://givecard-dcm.firebaseio.com",
+    projectId: "givecard-dcm",
+    storageBucket: "givecard-dcm.appspot.com",
+    messagingSenderId: "252395130688",
+    appId: "1:252395130688:web:e17255fe0353cefefbb4a5",
+    measurementId: "G-ZRXDQVKKPB"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+
+<script src="orginit.js"></script>
+
+</body>
+</html>
