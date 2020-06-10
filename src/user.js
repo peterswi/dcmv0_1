@@ -12,7 +12,8 @@ class User extends React.Component {
          lastname: "",
          email:"",
          userID: "",
-         password:""
+         password:"",
+         phone: null
     };
   }
 
@@ -28,19 +29,22 @@ class User extends React.Component {
         db.settings({
             timestampsInSnapshots:true
         });
-        const userRef = db.collection("users").add({
+        const userRef = db.collection("users").doc(this.state.userID).set({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
-            userID: this.state.userID,
+            phone: Number(this.state.phone),
+           // userID: this.state.userID,
             password: this.state.password
         });
         this.setState({
             firstname:"",
             lastname:"",
             email:"",
+            phone:"",
             userID:"",
             password:""
+
         });
 };
 
@@ -49,11 +53,25 @@ class User extends React.Component {
         <form onSubmit={this.addUser}>
           <input
             type="text"
+            name="userID"
+            placeholder="User ID"
+            onChange={this.updateInput}
+            value={this.state.userID}
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            onChange={this.updateInput}
+            value={this.state.password}
+          /><br /><br />
+          <input
+            type="text"
             name="firstname"
             placeholder="First name"
             onChange={this.updateInput}
             value={this.state.firstname}
-          /><br /><br />
+          />
           <input
             type="text"
             name="lastname"
@@ -62,25 +80,18 @@ class User extends React.Component {
             value={this.state.lastname}
           /><br /><br />
           <input
-            type="email"
+            type="text"
             name="email"
             placeholder="Email"
             onChange={this.updateInput}
             value={this.state.email}
-          /><br /><br />
+          />
           <input
-            type="text"
-            name="userID"
-            placeholder="User ID"
+            type="number"
+            name="phone"
+            placeholder="Phone Number"
             onChange={this.updateInput}
-            value={this.state.userID}
-          /><br /><br />
-          <input
-            type="text"
-            name="password"
-            placeholder="Password"
-            onChange={this.updateInput}
-            value={this.state.password}
+            value={this.state.phone}
           /><br /><br />
           <button type="submit">Submit</button>
         </form>
