@@ -34,6 +34,11 @@
   color: springgreen;
 }
 
+.App-navbar {
+  display: inline;
+  background-color: springgreen;
+}
+
 .App-link {
   color: darkslateblue;
 }
