@@ -1,28 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import * as firebase from 'firebase';
 import User from './user'
 
 class App extends Component {
-//building this constructor and component did mount to grow within the app. Still missing something
-
-    constructor() {
-        super();
-        this.state= {
-            speed: 'hello'
-        };
-    }
-
-    componentDidMount(){
-       const rootRef = firebase.database().ref();
-       const speedRef = rootRef.child('orgID');
-       speedRef.on('value',snap=>{
-            this.setState({
-                speed: snap.val()
-        });
-       });
-    }
 
     render(){
         return (
@@ -34,10 +16,7 @@ class App extends Component {
                         <h2>GiveCard Presents: GiveHelp</h2>
                     </p>
                     <p>
-                        <h2>React+firebase test: {this.state.speed}  </h2>
-                    </p>
-                    <p>
-                        Add User:
+                        <h3>Add Org User: <User/></h3>
                     </p>
 
                     <a
