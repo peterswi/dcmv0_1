@@ -1,37 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.png';
-import './App.css';
-import * as firebase from 'firebase';
-import User from './user'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+
+import home from './components/home';
+import RegisterUser from './components/registerUser';
+import contact from './components/contact';
+import Error from "./components/error";
+import Navigation from "./components/navigation";
+
+
 
 class App extends Component {
-
     render(){
         return (
-            <div className="App">
-                <h1> This the beginning of GiveHelp, our digital Case Management App</h1>
-                <header className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <p>
-                        <h2>GiveCard Presents: GiveHelp</h2>
-                    </p>
-                    <p>
-                        <h3>Add Org User: <User/></h3>
-                    </p>
+                <BrowserRouter>
+                    <div>
+                      <Navigation  />
+                        <Switch>
+                         <Route path="/" component={home} exact/>
+                         <Route path="/contact" component={contact}/>
+                         <Route path="/registerUser" component={RegisterUser}/>
 
-                    <a
-                        className="App-link"
-                        href="https://www.givecard.io/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Visit GiveCard
-                    </a>
-
-                </header>
-            </div>
+                        <Route component={Error}/>
+                       </Switch>
+                    </div>
+                </BrowserRouter>
         );
     }
 }
-
 export default App;

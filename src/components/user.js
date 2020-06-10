@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import firebase from "./firestore";
 
 //this is based on a basic intro to firestore + React
