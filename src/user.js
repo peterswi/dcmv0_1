@@ -28,7 +28,7 @@ class User extends React.Component {
         db.settings({
             timestampsInSnapshots:true
         });
-        const userRef = db.collection("PineStreetInn").add({
+        const userRef = db.collection("users").add({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
@@ -53,35 +53,35 @@ class User extends React.Component {
             placeholder="First name"
             onChange={this.updateInput}
             value={this.state.firstname}
-          />
+          /><br /><br />
           <input
             type="text"
             name="lastname"
             placeholder="Last name"
             onChange={this.updateInput}
             value={this.state.lastname}
-          />
+          /><br /><br />
           <input
             type="email"
             name="email"
-            placeholder="Full name"
+            placeholder="Email"
             onChange={this.updateInput}
             value={this.state.email}
-          />
+          /><br /><br />
           <input
             type="text"
             name="userID"
             placeholder="User ID"
             onChange={this.updateInput}
             value={this.state.userID}
-          />
+          /><br /><br />
           <input
             type="text"
             name="password"
             placeholder="Password"
             onChange={this.updateInput}
             value={this.state.password}
-          />
+          /><br /><br />
           <button type="submit">Submit</button>
         </form>
         );
