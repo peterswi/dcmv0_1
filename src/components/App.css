@@ -35,8 +35,13 @@
 }
 
 .App-navbar {
-  display: inline;
   background-color: springgreen;
+}
+
+.App-page {
+  background-color: springgreen;
+  border: 5px outset ghostwhite;
+  text-align: justify;
 }
 
 .App-link {
