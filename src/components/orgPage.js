@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
-import {Link} from "react-router-dom";
-import orgUser from './orgUser';
+import OrgUser from './orgUser';
+
 
 
 const orgPage = () =>{
@@ -17,10 +17,7 @@ const orgPage = () =>{
 
             <body className="App-page">
             <h3>
-                Add a New User to your organization:
-                <p>
-                    < orgUser />
-                </p>
+                Add a New User to your organization: < OrgUser/>
             </h3>
             </body>
             <footer className="App-footer">

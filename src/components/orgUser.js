@@ -3,7 +3,7 @@ import firebase from "./firestore";
 
 //this is based on a basic intro to firestore + React
 
-class orgUser extends React.Component {
+class OrgUser extends React.Component {
 
     constructor() {
         super();
@@ -115,4 +115,4 @@ class orgUser extends React.Component {
       }
    }
 
-export default orgUser;
+export default OrgUser;
