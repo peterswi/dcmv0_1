@@ -1,6 +1,4 @@
-
 var db = firebase.firestore();
-
 
 function storeData() {
 
