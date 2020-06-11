@@ -24,7 +24,7 @@ class OrgUser extends React.Component {
             [e.target.name]: e.target.value
         });
     };
-
+ //need to tinker with this-- as of now, when every time the checkbox is toggled it declares the admin true, meaning it makes it true whenever the checkbox changes, whether from unchecked to checked or vice versa
     onDeclareAdmin = e => {
         this.setState({
             [e.target.name]: true
