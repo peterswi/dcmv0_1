@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.png';
 import './App.css';
 import {Link} from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 const home = () => {
     return (
@@ -17,7 +18,8 @@ const home = () => {
                     <p>
                         <h2><b> Click a link to visit our different pages</b></h2>
                     </p>
-                    Visit an <Link to="/orgPage">Organization Page</Link><br></br>
+                   <Button variant="contained" color="white"> Visit an <Link to="/orgPage">Organization Page</Link></Button>
+                       <br></br>
                     Add a <Link to="/registerUser">New User</Link>
 
                 </body>
