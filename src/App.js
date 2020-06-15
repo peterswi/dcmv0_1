@@ -8,12 +8,14 @@ import orgPage from "./components/orgPage";
 import contact from './components/contact';
 import Error from "./components/error";
 import Navigation from "./components/navigation";
+import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
 
 
 class App extends Component {
     render(){
         return (
                     <div className="App-navbar">
+                        <PrimarySearchAppBar/>
                       <Navigation  />
                         <Switch>
                          <Route exact path="/" component={home} />
