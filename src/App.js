@@ -9,12 +9,31 @@ import contact from './components/contact';
 import Error from "./components/error";
 import Navigation from "./components/navigation";
 import PrimarySearchAppBar from "./components/PrimarySearchAppBar";
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import {createMuiTheme} from "@material-ui/core/styles";
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#33ff98',
+      main: '#00ff7f',
+      dark: '#00b258',
+      contrastText: '#000',
+    },
+    secondary: {
+      light: '#eeeeee',
+      main: '#e0e0e0',
+      dark: '#bdbdbd',
+      contrastText: '#000',
+    },
+  },
+});
 
 class App extends Component {
     render(){
         return (
-                    <div className="App-navbar">
+                    <div >
+                        <MuiThemeProvider theme={theme}>
                         <PrimarySearchAppBar/>
                       <Navigation  />
                         <Switch>
@@ -24,7 +43,10 @@ class App extends Component {
                          <Route path="/orgPage" component={orgPage}/>
                          <Route component={Error}/>
                        </Switch>
+                            </MuiThemeProvider>
                     </div>
+
+
         );
     }
 }

@@ -1,5 +1,5 @@
-import React from 'react';
-import { fade, makeStyles, createMuiTheme } from '@material-ui/core/styles';
+import React, {Component} from 'react';
+import { fade, makeStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -14,24 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-
-
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      light: '#33ff98',
-      main: '#00ff7f',
-      dark: '#00b258',
-      contrastText: '#fff',
-    },
-    secondary: {
-      light: '#ff7961',
-      main: '#f44336',
-      dark: '#ba000d',
-      contrastText: '#000',
-    },
-  },
-});
+//import Drawer from "@material-ui/core/Drawer";
+//import { NavDrawer } from "./navDrawer";
 
 const useStyles = makeStyles(theme => ({
 
@@ -100,13 +84,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function PrimarySearchAppBar() {
+
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-  const background = {
-    background : "springgreen"
-  };
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -183,6 +165,7 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+
 
   return (
     <div className={classes.grow}>
