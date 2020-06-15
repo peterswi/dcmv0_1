@@ -18,9 +18,9 @@ const home = () => {
                     <p>
                         <h2><b> Click a link to visit our different pages</b></h2>
                     </p>
-                   <Button variant="contained" color="white"> Visit an <Link to="/orgPage">Organization Page</Link></Button>
-                       <br></br>
-                    Add a <Link to="/registerUser">New User</Link>
+                   <Button variant="contained" color="white" href="/orgPage"> Visit an Organization Page</Button>
+                       <br></br> <br></br>
+                    <Button variant = "contained" color="white" href="/registerUser"> Add a new User</Button>
 
                 </body>
              <br></br><br></br>
