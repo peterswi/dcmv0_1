@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     return (
-       <div className="App-navbar">
-           <NavLink to="/">HomePage</NavLink> &nbsp; &nbsp; &nbsp;
-           <NavLink to="/registerUser">Register New User</NavLink>&nbsp; &nbsp; &nbsp;
-           <NavLink to="/orgPage">Oranization Page</NavLink>&nbsp; &nbsp; &nbsp;
+       <div className="App">
+           <NavLink to="/">HomePage</NavLink> <br></br>
+           <NavLink to="/registerUser">Register New User</NavLink><br></br>
+           <NavLink to="/orgPage">Organization Page</NavLink><br></br>
            <NavLink to="/contact">Contact GiveCard</NavLink><br></br>
 
        </div>

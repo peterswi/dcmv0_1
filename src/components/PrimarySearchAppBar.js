@@ -14,8 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
-//import Drawer from "@material-ui/core/Drawer";
-//import { NavDrawer } from "./navDrawer";
+import Drawer from "@material-ui/core/Drawer";
+import { NavDrawer } from "./navDrawer";
 
 const useStyles = makeStyles(theme => ({
 
@@ -83,6 +83,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+
 export default function PrimarySearchAppBar() {
 
   const classes = useStyles();
@@ -91,6 +92,31 @@ export default function PrimarySearchAppBar() {
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+
+  const [drawerOpened, drawer] = React.useState(null);
+  const isDrawerOpen=Boolean(drawerOpened);
+
+  const handleDrawerOpen = (event) =>{
+    drawer(event.currentTarget);
+  };
+  const handleDrawerClose = () =>{
+    drawer(null);
+  };
+  const drawerId = 'primary-search-menu';
+  const renderDrawer = (
+    <Menu
+      anchorEl={drawer}
+      anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+      id={drawerId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+      open={isDrawerOpen}
+      onClose={handleDrawerClose}
+    >
+      <MenuItem onClick={handleDrawerClose}>Profile</MenuItem>
+      <MenuItem onClick={handleDrawerClose}>My account</MenuItem>
+    </Menu>
+  );
 
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -175,9 +201,12 @@ export default function PrimarySearchAppBar() {
             edge="start"
             className={classes.menuButton}
             color="inherit"
-            aria-label="open drawer"
+            aria-label="menu"
+            aria-controls={drawerId}
+            aria-haspopup={true}
+            onClick={handleDrawerOpen}
           >
-            <MenuIcon />
+            <MenuIcon /> {/*seems like this would be the spot for some menu nav */}
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
             GiveHelp
@@ -234,6 +263,7 @@ export default function PrimarySearchAppBar() {
       </AppBar>
       {renderMobileMenu}
       {renderMenu}
+      {renderDrawer}
     </div>
   );
 }

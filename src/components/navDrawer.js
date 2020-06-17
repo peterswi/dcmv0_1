@@ -1,5 +1,6 @@
 import React from "react";
-import Drawer from "@material-ui/core";
+import Drawer from "@material-ui/core/Drawer";
+import Navigation from "./navigation";
 
 class NavDrawer extends React.Component {
   render() {
@@ -13,11 +14,7 @@ class NavDrawer extends React.Component {
           onClick={this.props.toggleDrawer(false)}
           onKeyDown={this.props.toggleDrawer(false)}
         >
-          <ul>
-            <li>Button1</li>
-            <li>Button2</li>
-            <li>Button3</li>
-          </ul>
+            <Navigation/>
         </div>
       </Drawer>
     );
