@@ -1,14 +1,16 @@
 import React from 'react';
+import Button from "@material-ui/core/Button";
+import { Link } from 'react-router-dom';
 
-import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
     return (
        <div className="App">
-           <NavLink to="/">HomePage</NavLink> <br></br>
-           <NavLink to="/registerUser">Register New User</NavLink><br></br>
-           <NavLink to="/orgPage">Organization Page</NavLink><br></br>
-           <NavLink to="/contact">Contact GiveCard</NavLink><br></br>
+           <br/>
+           <Button component={ Link } to ="/" variant="contained" color ="secondary"> Home </Button><br/><br/>
+           <Button component={ Link } to ="/orgPage" variant="contained" color ="secondary"> Organization Page </Button><br/><br/>
+           <Button component={ Link } to ="/registerUser" variant="contained" color ="secondary"> Register User </Button><br/><br/>
+           <Button component={ Link } to ="/contact" variant="contained" color ="secondary"> About </Button>
 
        </div>
     );
