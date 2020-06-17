@@ -9,7 +9,8 @@ function storeData () {
   db.collection('organizations').doc(inputOrgID).set({
     OrgName: inputOrgName,
     Passcode: inputPasscode,
-    Admin: []
+    admin: [],
+    users: []
   })
     .then(function () {
       console.log('Doc successful')
