@@ -44,7 +44,14 @@ class OrgUser extends React.Component {
             phone: Number(this.state.phone),
             password: this.state.password,
             isAdmin: Boolean(this.state.isAdmin)
-        });
+        })
+            .then(function () {
+              console.log('Doc successful')
+              alert('User Successfully Added!')
+            })
+            .catch(function (error) {
+              console.error('Error writing doc', error)
+    })
         this.setState({
             firstname:"",
             lastname:"",

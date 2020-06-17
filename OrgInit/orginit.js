@@ -1,4 +1,3 @@
-import * as firebase from 'firebase'
 
 var db = firebase.firestore()
 
@@ -9,10 +8,12 @@ function storeData () {
 
   db.collection('organizations').doc(inputOrgID).set({
     OrgName: inputOrgName,
-    Passcode: inputPasscode
+    Passcode: inputPasscode,
+    Admin: []
   })
     .then(function () {
       console.log('Doc successful')
+      alert('Org Successfully Created')
     })
     .catch(function (error) {
       console.error('Error writing doc', error)
@@ -29,5 +30,3 @@ function submitEvent () {
   storeData()
   clearField()
 }
-
-export default submitEvent
