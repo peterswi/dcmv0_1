@@ -16,8 +16,5 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-// initialize cloud firestore through firebase?
-// var db=firebase.firestore();
-// did this in the user.js file instead
 
 export default firebase
