@@ -6,7 +6,7 @@ import RegisterUser from './components/registerUser'
 import orgPage from './components/orgPage'
 import contact from './components/contact'
 import Error from './components/error'
-import Navigation from './components/navigation'
+// import Navigation from './components/navigation'
 
 const main = () => {
   return (

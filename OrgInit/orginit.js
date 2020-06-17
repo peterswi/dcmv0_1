@@ -1,3 +1,5 @@
+import * as firebase from 'firebase'
+
 var db = firebase.firestore()
 
 function storeData () {
@@ -27,3 +29,5 @@ function submitEvent () {
   storeData()
   clearField()
 }
+
+export default submitEvent
