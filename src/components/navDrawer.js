@@ -1,12 +1,12 @@
-import React from "react";
-import Drawer from "@material-ui/core/Drawer";
-import Navigation from "./navigation";
+import React from 'react'
+import Drawer from '@material-ui/core/Drawer'
+import Navigation from './navigation'
 
 class NavDrawer extends React.Component {
-  render() {
+  render () {
     return (
       <Drawer
-        anchor="left"
+        anchor='left'
         open={this.props.drawerOpened}
         onClose={this.props.toggleDrawer(false)}
       >
@@ -14,10 +14,10 @@ class NavDrawer extends React.Component {
           onClick={this.props.toggleDrawer(false)}
           onKeyDown={this.props.toggleDrawer(false)}
         >
-            <Navigation/>
+          <Navigation />
         </div>
       </Drawer>
-    );
+    )
   }
 }
-export default NavDrawer;
+export default NavDrawer
