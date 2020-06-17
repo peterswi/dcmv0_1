@@ -7,6 +7,7 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from "@material-ui/core/Drawer";
 import NavDrawer from "./navDrawer";
+import Grid from "@material-ui/core/Grid";
 
 class BasicNavBar extends React.Component {
   constructor(props) {
@@ -26,17 +27,19 @@ class BasicNavBar extends React.Component {
       <div className="App">
         <AppBar position="static">
           <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="Menu"
-              onClick={this.toggleDrawer(true)}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" color="inherit">
-              GiveHelp
-            </Typography>
-            <Button color="inherit">Login</Button>
+            <Grid justify="space-between" container spacing={24}>
+              <IconButton
+                color="inherit"
+                aria-label="Menu"
+                onClick={this.toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" color="inherit">
+                GiveHelp
+              </Typography>
+              <Button color="inherit" anchor="right">Login</Button>
+            </Grid>
           </Toolbar>
         </AppBar>
 
