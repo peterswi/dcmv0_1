@@ -1,5 +1,5 @@
 import React from 'react'
-import User from './user'
+import OrgUser from './orgUser'
 import './App.css'
 
 const RegisterUser = () => {
@@ -7,7 +7,7 @@ const RegisterUser = () => {
     <div className='App-header'>
       <h1>Register New User</h1>
       <p>
-        <h3>Add General User: <User /> </h3>
+        <h3>Add Organization User: <OrgUser /> </h3>
       </p>
     </div>
   )
