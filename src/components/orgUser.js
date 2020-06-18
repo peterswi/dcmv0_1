@@ -1,7 +1,14 @@
 import React, {Component} from 'react';
 import firebase from "./firestore";
+import { makeStyles } from '@material-ui/core/styles';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 //this is based on a basic intro to firestore + React
+
 
 class OrgUser extends Component {
 
@@ -13,7 +20,7 @@ class OrgUser extends Component {
          email:"",
          password:"",
          phone: null,
-         organization: "",
+         organizationId: "",
          isAdmin: false
     };
   }
@@ -29,6 +36,12 @@ class OrgUser extends Component {
             [e.target.name]: true
         });
     };
+    /*
+        getOrgs = () =>{
+          let d =firebase.firestore();
+          var orgs = d.collections("organizations").get()
+        }
+    */
 
     addUser = e => {
         e.preventDefault();
@@ -37,7 +50,7 @@ class OrgUser extends Component {
             timestampsInSnapshots:true
         });
         let ad = Boolean(this.state.isAdmin)
-        var org = db.collection("organizations").doc("Charlie's House") //in here need to have ability to pull
+        var org = db.collection("organizations").doc(this.state.organizationId) //in here need to have ability to pull
          db.collection("users").add({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -77,6 +90,7 @@ class OrgUser extends Component {
             phone:"",
             userID:"",
             password:"",
+            organizationId:"",
             isAdmin: false
 
         });
@@ -85,7 +99,19 @@ class OrgUser extends Component {
   render() {
     return (
         <form onSubmit={this.addUser}>
-
+          <FormControl >
+            <InputLabel id="org-select">Organization Selection</InputLabel>
+            <Select
+              labelId="org-select"
+              name="organizationId"
+              value={this.state.organizationId}
+              onChange={this.updateInput}
+              >
+              <MenuItem value={"Charlie's House"}>Chuck's House</MenuItem>
+              <MenuItem value={"CityMission"}>City Mission Boston</MenuItem>
+              <MenuItem value={"PineStreetInn"}>Pine Street Inn</MenuItem>
+            </Select>
+          </FormControl><br /><br />
           <input
             type="password"
             name="password"

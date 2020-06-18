@@ -3,6 +3,8 @@ import firebase from "./firestore";
 
 //this is based on a basic intro to firestore + React
 
+// this version is currently defunct. Can be repurposed for end-user registration
+
 class User extends React.Component {
 
     constructor() {
