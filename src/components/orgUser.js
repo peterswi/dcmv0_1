@@ -11,10 +11,9 @@ class OrgUser extends Component {
          firstname: "",
          lastname: "",
          email:"",
-         userID: "",
          password:"",
          phone: null,
-        // organization: "",
+         organization: "",
          isAdmin: false
     };
   }
@@ -37,31 +36,40 @@ class OrgUser extends Component {
         db.settings({
             timestampsInSnapshots:true
         });
-        const userRef = db.collection("users").doc(this.state.userID).set({
+        let ad = Boolean(this.state.isAdmin)
+        var org = db.collection("organizations").doc("Charlie's House") //in here need to have ability to pull
+         db.collection("users").add({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,
             phone: Number(this.state.phone),
             password: this.state.password,
-            isAdmin: Boolean(this.state.isAdmin)
+            isAdmin: ad
 
         })
-            .then(function () {
+            .then(function (docRef) {
               console.log('Doc successful')
-              alert('User Successfully Added!')
+              org.update({
+                users: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+              }).then(function(){
+                alert('User Successfully Added!')
+
+                   if ( ad == true ){
+                      org.update({
+                        admin: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+                      }).then(function(){
+                        alert('Added as admin!')
+                      } )
+
+              }
+                }
+              )
+
             })
             .catch(function (error) {
               console.error('Error writing doc', error)
         })
-        var org = db.collection("organizations").doc("PineStreetInn") //in here need to have ability to pull
-        org.update({
-          users: firebase.firestore.FieldValue.arrayUnion(this.state.userID)
-        })
-        if (Boolean(this.state.isAdmin) == true){
-          org.update({
-            admin: firebase.firestore.FieldValue.arrayUnion(this.state.userID)
-          })
-        }
+
         this.setState({
             firstname:"",
             lastname:"",
@@ -77,13 +85,7 @@ class OrgUser extends Component {
   render() {
     return (
         <form onSubmit={this.addUser}>
-          <input
-            type="text"
-            name="userID"
-            placeholder="User ID"
-            onChange={this.updateInput}
-            value={this.state.userID}
-          />
+
           <input
             type="password"
             name="password"
