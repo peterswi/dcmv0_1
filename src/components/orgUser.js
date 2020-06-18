@@ -3,7 +3,7 @@ import firebase from "./firestore";
 
 //this is based on a basic intro to firestore + React
 
-class OrgUser extends React.Component {
+class OrgUser extends Component {
 
     constructor() {
         super();
@@ -44,6 +44,7 @@ class OrgUser extends React.Component {
             phone: Number(this.state.phone),
             password: this.state.password,
             isAdmin: Boolean(this.state.isAdmin)
+
         })
             .then(function () {
               console.log('Doc successful')
@@ -51,7 +52,16 @@ class OrgUser extends React.Component {
             })
             .catch(function (error) {
               console.error('Error writing doc', error)
-    })
+        })
+        var org = db.collection("organizations").doc("PineStreetInn") //in here need to have ability to pull
+        org.update({
+          users: firebase.firestore.FieldValue.arrayUnion(this.state.userID)
+        })
+        if (Boolean(this.state.isAdmin) == true){
+          org.update({
+            admin: firebase.firestore.FieldValue.arrayUnion(this.state.userID)
+          })
+        }
         this.setState({
             firstname:"",
             lastname:"",
@@ -109,7 +119,7 @@ class OrgUser extends React.Component {
             onChange={this.updateInput}
             value={this.state.phone}
           /><br /><br />
-          Administrator
+            Administrator <nbsp/><nbsp/>
             <input
                 type="checkbox"
                 name="isAdmin"

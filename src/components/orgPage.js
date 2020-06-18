@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from './logo.png'
 import './App.css'
-import OrgUser from './orgUser'
+
 
 const orgPage = () => {
   return (
@@ -13,13 +13,13 @@ const orgPage = () => {
         </h1>
       </header>
 
-      <body className='App-page'>
+      <body >
         <h3>
-                Add a New User to your organization: <OrgUser />
+                Organization Page
         </h3>
       </body>
       <footer className='App-footer'>
-                where is my form
+                The End
       </footer>
     </div>
   )
