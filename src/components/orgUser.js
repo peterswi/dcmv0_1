@@ -74,7 +74,7 @@ class OrgUser extends Component {
                         alert('Added as admin!')
                       } )
 
-              }
+                  }
                 }
               )
 
