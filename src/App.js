@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './components/App.css'
+/*
+import firebase from './components/firestore'
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebaseApp from 'firebase/app';
+import 'firebase/auth';
+*/
 
 import home from './components/home'
 import RegisterUser from './components/registerUser'
@@ -30,15 +36,16 @@ const theme = createMuiTheme({
   }
 })
 
+
 class App extends Component {
   render () {
     return (
       <div>
+
         <MuiThemeProvider theme={theme}>
           <BasicNavBar />
 
           {/* <PrimarySearchAppBar/> */}
-
           <Switch>
             <Route exact path='/' component={home} />
             <Route path='/contact' component={contact} />
@@ -48,7 +55,6 @@ class App extends Component {
           </Switch>
         </MuiThemeProvider>
       </div>
-
     )
   }
 }
