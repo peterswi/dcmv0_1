@@ -38,7 +38,7 @@ class BasicNavBar extends React.Component {
       <div className={useStyles.grow}>
         <AppBar position="static">
           <Toolbar>
-            <Grid container spacing={3}>
+            <Grid container spacing={1} alignItems='center' justify='center'>
               <Grid item xs>
               <IconButton
                 color="inherit"
@@ -50,11 +50,10 @@ class BasicNavBar extends React.Component {
 
               </IconButton>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                   <div className={useStyles.search}>
-                  <div className={useStyles.searchIcon}>
                          <SearchIcon />
-                      </div>
+
                     <InputBase
                         placeholder='Search…'
                           classes={{
@@ -66,7 +65,7 @@ class BasicNavBar extends React.Component {
 
                       </div>
                   </Grid>
-                  <Grid item xs={6} alignContent='center'>
+                  <Grid item xs={5}>
               <Typography className={useStyles.title} variant='h6' noWrap>
                 GiveHelp
               </Typography>
