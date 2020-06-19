@@ -2,7 +2,6 @@ import React from 'react'
 import logo from './logo.png'
 import './App.css'
 
-
 const orgPage = () => {
   return (
     <div className='App'>
@@ -13,7 +12,7 @@ const orgPage = () => {
         </h1>
       </header>
 
-      <body >
+      <body>
         <h3>
                 Organization Page
         </h3>

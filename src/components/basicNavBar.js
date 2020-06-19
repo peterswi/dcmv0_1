@@ -29,7 +29,6 @@ class BasicNavBar extends React.Component {
     });
   };
 
-
   render() {
 
 
