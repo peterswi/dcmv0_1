@@ -54,6 +54,8 @@ class BasicNavBar extends React.Component {
                          <SearchIcon />
 
                     <InputBase
+
+                      color="secondary"
                         placeholder='Search…'
                           classes={{
                             root: useStyles.inputRoot,
