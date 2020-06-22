@@ -17,9 +17,9 @@ import Error from './components/error'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 import BasicNavBar from './components/basicNavBar'
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
-import { createMuiTheme } from '@material-ui/core/styles'
+import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
+// import { CssBaseline } from '@material-ui/core' USE OR NO?
 
 const theme = createMuiTheme({
   palette: {

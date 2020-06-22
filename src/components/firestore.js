@@ -6,4 +6,4 @@ require('firebase/firestore')
 const base = firebase.initializeApp(firebaseConfig)
 const facebookProvider = new firebase.auth.FacebookAuthProvider()
 
-export { base , facebookProvider}
+export { base, facebookProvider }
