@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import firebase from "./firestore";
+import { base } from "./firestore";
+import * as firebase from 'firebase';
 import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';

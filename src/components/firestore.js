@@ -3,6 +3,7 @@ import firebaseConfig from './firebaseConfig'
 
 require('firebase/firestore')
 // initialize firebase
-firebase.initializeApp(firebaseConfig)
+const base= firebase.initializeApp(firebaseConfig)
+const facebookProvider= new firebase.auth.FacebookAuthProvider()
 
-export default firebase
+export default { base, facebookProvider}
