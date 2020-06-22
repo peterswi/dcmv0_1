@@ -9,6 +9,7 @@ import 'firebase/auth';
 */
 
 import home from './components/home'
+import Login from './components/login'
 import RegisterUser from './components/registerUser'
 import orgPage from './components/orgPage'
 import contact from './components/contact'
@@ -16,8 +17,9 @@ import Error from './components/error'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 import BasicNavBar from './components/basicNavBar'
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core/styles'
+
 
 const theme = createMuiTheme({
   palette: {
@@ -47,6 +49,7 @@ class App extends Component {
           {/* <PrimarySearchAppBar/> */}
           <Switch>
             <Route exact path='/' component={home} />
+            <Route exact path='/login' component={Login} />
             <Route path='/contact' component={contact} />
             <Route path='/registerUser' component={RegisterUser} />
             <Route path='/orgPage' component={orgPage} />
