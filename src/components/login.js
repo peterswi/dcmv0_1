@@ -17,9 +17,20 @@ class Login extends Component{
     super(props)
     this.authWithFacebook = this.authWithFacebook.bind(this)
     this.authWithEmailPassword = this.authWithEmailPassword.bind(this)
+    this.state ={
+      redirect: false
+    }
   }
   authWithFacebook(){
-    console.log("auth with fb successful")
+    base.auth().signInWithPopup(facebookProvider)
+      .then((result, error)=>{
+        if (error){
+          alert('Unable to sign in with Facebook')
+        }
+        else{
+          this.setState({ redirect: true})
+        }
+      })
   }
   authWithEmailPassword(){
     // eslint-disable-next-line no-restricted-globals
@@ -33,6 +44,9 @@ class Login extends Component{
 
 
   render(){
+    if (this.state.redirect===true){
+      return <Redirect to='/' />
+    }
     return(
       <div style={loginStyles}>
         <button style={{width: "100%"}} className="pt-button" onClick={ ()=> this.authWithFacebook() }>
