@@ -51,7 +51,7 @@ export default function Resources() {
               </Typography>
             </CardContent>
             <CardActions className={classes.center}>
-              <Button variant='contained'> Learn More </Button>
+              <Button variant='contained' href='/covid'> Learn More </Button>
             </CardActions>
           </Card>
           &nbsp;&nbsp;
@@ -65,7 +65,7 @@ export default function Resources() {
               </Typography>
             </CardContent>
             <CardActions className={classes.center}>
-              <Button variant='contained'> Learn More </Button>
+              <Button variant='contained' href='/housing'> Learn More </Button>
             </CardActions>
           </Card>
 
@@ -79,7 +79,7 @@ export default function Resources() {
               </Typography>
             </CardContent>
             <CardActions className={classes.center}>
-              <Button variant='contained'> Learn More </Button>
+              <Button variant='contained' href='/food'> Learn More </Button>
             </CardActions>
           </Card>
 
@@ -93,7 +93,7 @@ export default function Resources() {
               </Typography>
             </CardContent>
             <CardActions className={classes.center}>
-              <Button variant='contained'> Learn More </Button>
+              <Button variant='contained' href='/job'> Learn More </Button>
             </CardActions>
           </Card>
 <Card className={classes.root} raised={true}>
