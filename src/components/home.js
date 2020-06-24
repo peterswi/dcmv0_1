@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   root: {
     minWidth: 275,
     float: 'left',
-
+    margin: 'auto',
   },
   bullet: {
     display: 'inline-block',
@@ -25,6 +25,11 @@ const useStyles = makeStyles({
   },
   pos: {
     marginBottom: 12,
+  },
+ center: {
+  margin: 'auto',
+  width: '50%',
+  padding: '10px',
   },
 });
 
@@ -45,22 +50,22 @@ export default function Home() {
         </p>
         <Button variant='contained' color='white' href='/orgPage'> Visit an Organization Page</Button>
         <br /> <br />
-        <Button variant='contained' color='white' href='/resources'> View All Resources</Button>
-        <br/><br />
+
           {/* indented block here where all the cards will live*/}
           <Card className={classes.root} raised={true}>
             <CardContent>
               <Typography className={classes.title} color="textSecondary" gutterBottom>
-                Housing
+                COVID-19
               </Typography>
               <Typography variant="h5" component="h2">
-                Get Housing Support
+                Get CoronaVirus Support
               </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions className={classes.center}>
               <Button variant='contained'> Learn More </Button>
             </CardActions>
           </Card>
+          &nbsp;&nbsp;
           <Card className={classes.root} raised={true}>
             <CardContent>
               <Typography className={classes.title} color="textSecondary" gutterBottom>
@@ -70,24 +75,44 @@ export default function Home() {
                 Get Housing Support
               </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions className={classes.center}>
               <Button variant='contained'> Learn More </Button>
             </CardActions>
           </Card>
+
           <Card className={classes.root} raised={true}>
             <CardContent>
               <Typography className={classes.title} color="textSecondary" gutterBottom>
-                Housing
+                Food
               </Typography>
               <Typography variant="h5" component="h2">
-                Get Housing Support
+                Get Food Support
               </Typography>
             </CardContent>
-            <CardActions>
+            <CardActions className={classes.center}>
               <Button variant='contained'> Learn More </Button>
             </CardActions>
           </Card>
+
+          <Card className={classes.root} raised={true}>
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Jobs
+              </Typography>
+              <Typography variant="h5" component="h2">
+                Get Job Search Support
+              </Typography>
+            </CardContent>
+            <CardActions className={classes.center}>
+              <Button variant='contained'> Learn More </Button>
+            </CardActions>
+          </Card>
+
+
         <br/><br /> <br /><br/><br /> <br /><br/><br /> <br />
+
+        <Button variant='contained' color='white' href='/resources'> View All Resources</Button>
+        <br/><br />
         <Button variant='contained' color='white' href='/registerUser'> Add a new User</Button>
 
       </body>
