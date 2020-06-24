@@ -18,7 +18,7 @@ import Error from './components/error'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 import BasicNavBar from './components/basicNavBar'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-
+import resources from './components/resources'
 // import { CssBaseline } from '@material-ui/core' USE OR NO?
 
 const theme = createMuiTheme({
@@ -53,6 +53,7 @@ class App extends Component {
             <Route path='/contact' component={contact} />
             <Route path='/registerUser' component={RegisterUser} />
             <Route path='/orgPage' component={orgPage} />
+            <Route path='/resources' component={resources}/>
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>

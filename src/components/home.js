@@ -3,8 +3,34 @@ import logo from './logo.png'
 import './App.css'
 import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button'
+import Card from '@material-ui/core/Card'
+import CardActions from '@material-ui/core/CardActions'
+import CardContent from '@material-ui/core/CardContent'
+import { makeStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography';
 
-const home = () => {
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+    float: 'left',
+
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+});
+
+export default function Home() {
+  const classes = useStyles();
+
   return (
     <div className='App'>
       <header className='App-header'>
@@ -19,6 +45,49 @@ const home = () => {
         </p>
         <Button variant='contained' color='white' href='/orgPage'> Visit an Organization Page</Button>
         <br /> <br />
+        <Button variant='contained' color='white' href='/resources'> View All Resources</Button>
+        <br/><br />
+          {/* indented block here where all the cards will live*/}
+          <Card className={classes.root} raised={true}>
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Housing
+              </Typography>
+              <Typography variant="h5" component="h2">
+                Get Housing Support
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant='contained'> Learn More </Button>
+            </CardActions>
+          </Card>
+          <Card className={classes.root} raised={true}>
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Housing
+              </Typography>
+              <Typography variant="h5" component="h2">
+                Get Housing Support
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant='contained'> Learn More </Button>
+            </CardActions>
+          </Card>
+          <Card className={classes.root} raised={true}>
+            <CardContent>
+              <Typography className={classes.title} color="textSecondary" gutterBottom>
+                Housing
+              </Typography>
+              <Typography variant="h5" component="h2">
+                Get Housing Support
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button variant='contained'> Learn More </Button>
+            </CardActions>
+          </Card>
+        <br/><br /> <br /><br/><br /> <br /><br/><br /> <br />
         <Button variant='contained' color='white' href='/registerUser'> Add a new User</Button>
 
       </body>
@@ -38,6 +107,6 @@ const home = () => {
       </footer>
 
     </div>
-  )
+  );
 }
-export default home
+// export default home
