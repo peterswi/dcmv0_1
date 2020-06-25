@@ -22,5 +22,6 @@ $to = $user_email;
 $headers = "From: $email_from \r\n";
 
 //send email
-mail($to,$email_subject,$email_body,$headers)
+mail($to,$email_subject,$email_body,$headers);
 
+?>
