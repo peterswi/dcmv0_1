@@ -1,4 +1,5 @@
 <?php
+//putting this file on the back burner for now-- going to try to do email through firebase
 if(!isset($_POST['submit']))
 {
     // page should not be accessed directly
