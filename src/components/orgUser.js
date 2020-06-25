@@ -99,7 +99,7 @@ class OrgUser extends Component {
 
   render() {
     return (
-        <form onSubmit={this.addUser}>
+        <form method="post" name="registrationEmailForm" action="form-to-email.php" onSubmit={this.addUser}>
           <FormControl >
             <InputLabel id="org-select">Organization Selection</InputLabel>
             <Select

@@ -96,7 +96,7 @@ export default function Resources() {
               <Button variant='contained' href='/job'> Learn More </Button>
             </CardActions>
           </Card>
-<Card className={classes.root} raised={true}>
+            <Card className={classes.root} raised={true}>
             <CardContent>
               <Typography className={classes.title} color="textSecondary" gutterBottom>
                 COVID-19
