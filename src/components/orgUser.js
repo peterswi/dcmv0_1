@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
-import { base } from "./firestore";
+// import { base } from "./firestore";
 import * as firebase from 'firebase';
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
+// import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 
-//this is based on a basic intro to firestore + React
+// this is based on a basic intro to firestore + React
 
 
 class OrgUser extends Component {
@@ -68,7 +68,7 @@ class OrgUser extends Component {
               }).then(function(){
                 alert('User Successfully Added!')
 
-                   if ( ad == true ){
+                   if ( ad === true ){ // changed from == to ===, if problems arise
                       org.update({
                         admin: firebase.firestore.FieldValue.arrayUnion(docRef.id)
                       }).then(function(){

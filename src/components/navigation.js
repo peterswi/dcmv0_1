@@ -4,23 +4,23 @@ import { Link } from 'react-router-dom'
 
 const Navigation = () => {
   return (
-    <div className='App'>
-      <br />
-      <Button component={Link} to='/' variant='contained' color='secondary'> Home </Button><br /><br />
+      <div className="App"> {/* throwing error here and unsure why*/}
       {this.props.authenticated
         ? (
-          <div>
+            <div>
+              <br />
+              <Button component={Link} to='/' variant='contained' color='secondary'> Home </Button><br /><br />
             <Button component={Link} to='/orgPage' variant='contained' color='secondary'> Organization
               Page </Button><br/><br/>
             <Button component={Link} to='/resources' variant='contained' color='secondary'> All Resources </Button><br/><br/>
             <Button component={Link} to='/registerUser' variant='contained' color='secondary'> Register
               User </Button><br/><br/>
             <Button component={Link} to='/contact' variant='contained' color='secondary'> About </Button>
-          </div>
+            </div>
         )
         : null
       }
-    </div>
+      </div>
   )
 }
 

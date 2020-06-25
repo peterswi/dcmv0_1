@@ -20,7 +20,8 @@ class BasicNavBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      drawerOpened: false
+      drawerOpened: false,
+     // authenticated: this.props.authenticated
     };
   }
   toggleDrawer = booleanValue => () => {

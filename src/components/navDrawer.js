@@ -3,6 +3,15 @@ import Drawer from '@material-ui/core/Drawer'
 import Navigation from './navigation'
 
 class NavDrawer extends React.Component {
+  /*
+  constructor () {
+    super();
+    this.state={
+      authenticated: this.props.authenticated
+    }
+  }
+  */
+
   render () {
     return (
       <Drawer

@@ -7,7 +7,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebaseApp from 'firebase/app';
 import 'firebase/auth';
 */
-
+import { base } from './components/firestore'
 import Home from './components/home'
 import Login from './components/login'
 import RegisterUser from './components/registerUser'
@@ -49,13 +49,31 @@ class App extends Component {
       authenticated: false
     };
   }
+  componentWillMount () {
+    this.removeAuthListener=base.auth().onAuthStateChanged((user)=> {
+        if(user){
+          this.setState({
+              authenticated: true
+          })
+        } else{
+          this.setState({
+            authenticated:false
+          })
+        }
+      }
+    )
+  }
+  componentWillUnmount () {
+    this.removeAuthListener();
+  }
+
   render () {
     return (
       <div>
 
         <MuiThemeProvider theme={theme}>
-          <BasicNavBar />
-
+          <BasicNavBar authenticated={this.state.authenticated} />
+          <Home authenticated={this.state.authenticated} />
           {/* <PrimarySearchAppBar/> */}
           <Switch>
             <Route exact path='/' component={Home} />
