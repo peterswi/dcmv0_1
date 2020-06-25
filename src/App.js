@@ -57,11 +57,11 @@ class App extends Component {
             <Route path='/contact' component={contact} />
             <Route path='/registerUser' component={RegisterUser} />
             <Route path='/orgPage' component={orgPage} />
-            <Route path='/resources' component={resources}/>
-            <Route path='/food' component={Food}/>
-            <Route path='/job' component={Job}/>
-            <Route path='/housing' component={Housing}/>
-            <Route path='/covid' component={Covid}/>
+            <Route path='/resources' component={resources} />
+            <Route path='/food' component={Food} />
+            <Route path='/job' component={Job} />
+            <Route path='/housing' component={Housing} />
+            <Route path='/covid' component={Covid} />
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>
