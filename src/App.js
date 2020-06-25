@@ -43,6 +43,12 @@ const theme = createMuiTheme({
 })
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state={
+      authenticated: false
+    };
+  }
   render () {
     return (
       <div>

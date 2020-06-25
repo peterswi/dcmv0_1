@@ -5,7 +5,6 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import Drawer from "@material-ui/core/Drawer";
 import NavDrawer from "./navDrawer";
 import Grid from "@material-ui/core/Grid";
 import SearchIcon from '@material-ui/icons/Search'
@@ -36,28 +35,32 @@ class BasicNavBar extends React.Component {
 
     return (
       <div className={useStyles.grow}>
-        <AppBar position="static">
-          <Toolbar>
-            <Grid container spacing={1} alignItems='center' justify='center'>
-              <Grid item xs>
-              <IconButton
-                color="inherit"
-                className={useStyles.menuButton}
-                aria-label="Menu"
-                onClick={this.toggleDrawer(true)}
-              >
-                <MenuIcon />
 
-              </IconButton>
+          <AppBar position="static">
+            <Toolbar>
+              <Grid container spacing={1} alignItems='center' justify='center'>
+                <Grid item xs>
+                  <IconButton
+                    color="inherit"
+                    className={useStyles.menuButton}
+                    aria-label="Menu"
+                    onClick={this.toggleDrawer(true)}
+                  >
+                    <MenuIcon/>
+
+                  </IconButton>
                 </Grid>
                 <Grid item xs={4}>
-                  <div className={useStyles.search}>
-                         <SearchIcon />
+                  {this.props.authenticated
+                    ? (
+                      <div className={useStyles.search}>
 
-                    <InputBase
+                        <SearchIcon/>
 
-                      color="secondary"
-                        placeholder='Search…'
+                        <InputBase
+
+                          color="secondary"
+                          placeholder='Search…'
                           classes={{
                             root: useStyles.inputRoot,
                             input: useStyles.inputInput
@@ -65,24 +68,27 @@ class BasicNavBar extends React.Component {
                           inputProps={{ 'aria-label': 'search' }}
                         />
 
-                      </div>
-                  </Grid>
-                  <Grid item xs={5}>
-              <Typography className={useStyles.title} variant='h6' noWrap>
-                GiveHelp
-              </Typography>
-                    </Grid>
-              <Grid item xs>
-              <Button color="inherit" anchor="right" component={Link} to='/login'>Login</Button>
+                      </div>)
+                    : null
+                  }
+                </Grid>
+                <Grid item xs={5}>
+                  <Typography className={useStyles.title} variant='h6' noWrap>
+                    GiveHelp
+                  </Typography>
+                </Grid>
+                <Grid item xs>
+                  <Button color="inherit" anchor="right" component={Link} to='/login'>Login</Button>
+                </Grid>
               </Grid>
-            </Grid>
-          </Toolbar>
-        </AppBar>
+            </Toolbar>
+          </AppBar>
 
-        <NavDrawer
-          drawerOpened={this.state.drawerOpened}
-          toggleDrawer={this.toggleDrawer}
-        />
+          <NavDrawer
+            drawerOpened={this.state.drawerOpened}
+            toggleDrawer={this.toggleDrawer}
+          />
+
       </div>
     );
   }
