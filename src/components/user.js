@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import firebase from "./firestore";
+import firebase from "../firestore";
 
 //this is based on a basic intro to firestore + React
 
 // this version is currently defunct. Can be repurposed for end-user registration
 
-class User extends React.Component {
+class User extends Component {
 
     constructor() {
         super();
@@ -31,7 +31,7 @@ class User extends React.Component {
         db.settings({
             timestampsInSnapshots:true
         });
-        const userRef = db.collection("users").doc(this.state.userID).set({
+        db.collection("users").doc(this.state.userID).set({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             email: this.state.email,

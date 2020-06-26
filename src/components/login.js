@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { base, facebookProvider } from './firestore'
+import { base, facebookProvider } from '../firestore'
 
 const loginStyles = {
   width: '90%',
@@ -69,7 +69,7 @@ class Login extends Component {
             Password
             <input style={{ width: '100%' }} className='pt-input' name='password' type='password' ref={(input) => { this.passwordInput = input }} placeholder='password' />
           </label>
-          <input style={{ width: '100%' }} className='pt-input' type='submit' className='pt-button' value='Log In' />
+          <input style={{ width: '100%' }} className='pt-input' type='submit'  value='Log In' />
         </form>
       </div>
     )

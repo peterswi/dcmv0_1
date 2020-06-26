@@ -7,7 +7,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebaseApp from 'firebase/app';
 import 'firebase/auth';
 */
-import { base } from './components/firestore'
+import { base } from './firestore'
 import Home from './components/home'
 import Login from './components/login'
 import RegisterUser from './components/registerUser'
