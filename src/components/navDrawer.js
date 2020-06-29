@@ -23,7 +23,7 @@ class NavDrawer extends React.Component {
           onClick={this.props.toggleDrawer(false)}
           onKeyDown={this.props.toggleDrawer(false)}
         >
-          <Navigation />
+          <Navigation authenticated={this.props.authenticated} />
         </div>
       </Drawer>
     )

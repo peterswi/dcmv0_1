@@ -79,13 +79,26 @@ class BasicNavBar extends React.Component {
                   </Typography>
                 </Grid>
                 <Grid item xs>
-                  <Button color="inherit" anchor="right" component={Link} to='/login'>Login</Button>
+                  {
+                    this.props.authenticated
+                      ?(
+                        <div>
+                          <Button variant="contained" color="white" anchor="right" component={Link} to='/profile' >Profile</Button>
+                        </div>
+                      )
+                      :(
+                          <div>
+                          <Button variant='contained' color="white" anchor="right" component={Link} to='/login'>Login</Button>
+                          </div>
+                      )
+                    }
                 </Grid>
               </Grid>
             </Toolbar>
           </AppBar>
 
           <NavDrawer
+            authenticated={this.props.authenticated}
             drawerOpened={this.state.drawerOpened}
             toggleDrawer={this.toggleDrawer}
           />

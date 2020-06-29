@@ -7,7 +7,7 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebaseApp from 'firebase/app';
 import 'firebase/auth';
 */
-import { base } from './firestore'
+import { base, app } from './firestore'
 import Home from './components/home'
 import Login from './components/login'
 import RegisterUser from './components/registerUser'
@@ -18,6 +18,7 @@ import Job from './components/job'
 import Housing from './components/housing'
 import Covid from './components/covid'
 import Food from './components/food'
+import Profile from './components/profile'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 import BasicNavBar from './components/basicNavBar'
@@ -50,14 +51,14 @@ class App extends Component {
     };
   }
   componentWillMount () {
-    this.removeAuthListener=base.auth().onAuthStateChanged((user)=> {
+    this.removeAuthListener=app.auth().onAuthStateChanged((user)=> {
         if(user){
           this.setState({
               authenticated: true
           })
         } else{
           this.setState({
-            authenticated:false
+            authenticated: false
           })
         }
       }
@@ -73,7 +74,7 @@ class App extends Component {
 
         <MuiThemeProvider theme={theme}>
           <BasicNavBar authenticated={this.state.authenticated} />
-          <Home authenticated={this.state.authenticated} />
+
           {/* <PrimarySearchAppBar/> */}
           <Switch>
             <Route exact path='/' component={Home} />
@@ -86,6 +87,7 @@ class App extends Component {
             <Route path='/job' component={Job} />
             <Route path='/housing' component={Housing} />
             <Route path='/covid' component={Covid} />
+            <Route path='/profile' component={Profile} />
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>

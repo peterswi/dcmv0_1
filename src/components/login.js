@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { base, facebookProvider } from '../firestore'
+import { app, facebookProvider } from '../firestore'
 
 const loginStyles = {
   width: '90%',
@@ -22,7 +22,7 @@ class Login extends Component {
   }
 
   authWithFacebook () {
-    base.auth().signInWithPopup(facebookProvider)
+    app.auth().signInWithPopup(facebookProvider)
       .then((result, error) => {
         if (error) {
           alert('Unable to sign in with Facebook')
@@ -43,9 +43,11 @@ class Login extends Component {
   }
 
   render () {
-    if (this.state.redirect === true) {
-      return <Redirect to='/' />
-    }
+
+      if (this.state.redirect === true) {
+        return <Redirect to='/'/>
+      }
+
     return (
       <div style={loginStyles}>
         <button style={{ width: '100%' }} className='pt-button' onClick={() => this.authWithFacebook()}>
