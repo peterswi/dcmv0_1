@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import { app, db } from "../firestore";
+//import { app, db } from "../firestore";
+import * as firebase from 'firebase';
 // import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -45,12 +46,13 @@ class OrgUser extends Component {
 
     addUser = e => {
         e.preventDefault();
+        const db = firebase.firestore();
         db.settings({
             timestampsInSnapshots:true
         });
         let ad = Boolean(this.state.isAdmin)
         var org = db.collection("organizations").doc(this.state.organizationId) //in here need to have ability to pull
-        //app.auth().createUserWithEmailAndPassword(this.state.email,this.state.password) -- can i do this?
+
          db.collection("users").add({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -66,7 +68,7 @@ class OrgUser extends Component {
                 users: db.FieldValue.arrayUnion(docRef.id)
               }).then(function(){
                 alert('User Successfully Added!')
-
+                console.log('Added to an org')
                    if ( ad === true ){ // changed from == to ===, if problems arise
                       org.update({
                         admin: db.FieldValue.arrayUnion(docRef.id)

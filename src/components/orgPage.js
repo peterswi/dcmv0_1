@@ -17,7 +17,7 @@ const orgPage = () => {
         <h3>
                 Organization Page
         </h3>
-      Admin Add Users Here: <OrgUser/>
+      Admin Add Users Here:
       </body>
       <footer className='App-footer'>
                 The End
