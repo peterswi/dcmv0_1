@@ -12,6 +12,7 @@ const loginStyles = {
 }
 
 class Login extends Component {
+
   constructor (props) {
     super(props)
     this.authWithFacebook = this.authWithFacebook.bind(this)
@@ -54,26 +55,25 @@ class Login extends Component {
         }
         })
       .then((user)=>{
-        if (user && user.email){
+          if(user && user.email){
+            // not entering this block rn, need to figure out why
+            alert('received')
+          }
           this.loginForm.reset()
           this.setState({redirect: true})
-        }
+
       })
       .catch((error) =>{
         alert(error.message)
         }
       )
     console.log('authed with email')
-    console.table([{
-      email: this.emailInput.value,
-      password: this.passwordInput.value
-    }])
   }
 
   render () {
 
       if (this.state.redirect === true) {
-        return <Redirect to='/'/>
+        return( <Redirect to='/'/>)
       }
 
     return (
@@ -89,7 +89,7 @@ class Login extends Component {
             <h5>
               Note
             </h5>
-            If you don't have an account already, this form will create one?
+            If you don't have an account already, this form will create one for you.
           </div>
           <label className='pt-label'>
             Email
