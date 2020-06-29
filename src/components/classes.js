@@ -11,6 +11,7 @@ export const useStyles = makeStyles(theme => ({
   },
   title: {
     display: 'none',
+    fontsize: 14,
     [theme.breakpoints.up('sm')]: {
       display: 'block'
     }
@@ -64,5 +65,23 @@ export const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }
+  },
+  root: {
+    minWidth: 275,
+    float: 'left',
+    margin: 'auto'
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)'
+  },
+  pos: {
+    marginBottom: 12
+  },
+  center: {
+    margin: 'auto',
+    width: '50%',
+    padding: '10px'
   }
 }))

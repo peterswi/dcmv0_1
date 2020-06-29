@@ -45,6 +45,14 @@ const theme = createMuiTheme({
     }
   }
 })
+ /*
+ //Basically, trying to figure out how to pass this.state.authenticated to the router below. Figure it out later
+const homeAuth =(props) =>{
+  return(
+    <Home authenticated={this.props.authenticated}/>
+  )
+}
+*/
 
 class App extends Component {
   constructor(){
@@ -74,6 +82,7 @@ class App extends Component {
     this.removeAuthListener();
   }
 
+
   render () {
     if (this.state.loading === true){
       return(
@@ -91,7 +100,7 @@ class App extends Component {
 
           {/* <PrimarySearchAppBar/> */}
           <Switch>
-            <Route exact path='/' component={Home} />
+            <Route exact path='/' render={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
             <Route path='/contact' component={contact} />

@@ -8,8 +8,9 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
+import { useStyles } from './classes'
 
-const useStyles = makeStyles({
+const mystyles = makeStyles({
   root: {
     minWidth: 275,
     float: 'left',
@@ -34,7 +35,8 @@ const useStyles = makeStyles({
 })
 
 export default function Home () {
-  const classes = useStyles()
+  //this classes thing broke somehow-- need to correct that later on.
+  //const classes = mystyles()
 
   return (
     <div className='App'>
@@ -54,58 +56,58 @@ export default function Home () {
           <br/> <br/>
 
           {/* indented block here where all the cards will live */}
-          <Card className={classes.root} raised>
+          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
             <CardContent>
-              <Typography className={classes.title} color='textSecondary' gutterBottom>
+              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 COVID-19
               </Typography>
               <Typography variant='h5' component='h2'>
                 Get CoronaVirus Support
               </Typography>
             </CardContent>
-            <CardActions className={classes.center}>
+            <CardActions className={useStyles.center}>
               <Button variant='contained' href='/covid'> Learn More </Button>
             </CardActions>
           </Card>
           &nbsp;&nbsp;
-          <Card className={classes.root} raised>
+          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
             <CardContent>
-              <Typography className={classes.title} color='textSecondary' gutterBottom>
+              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 Housing
               </Typography>
               <Typography variant='h5' component='h2'>
                 Get Housing Support
               </Typography>
             </CardContent>
-            <CardActions className={classes.center}>
+            <CardActions className={useStyles.center}>
               <Button variant='contained' href='/housing'> Learn More </Button>
             </CardActions>
           </Card>
 
-          <Card className={classes.root} raised>
+          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
             <CardContent>
-              <Typography className={classes.title} color='textSecondary' gutterBottom>
+              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 Food
               </Typography>
               <Typography variant='h5' component='h2'>
                 Get Food Support
               </Typography>
             </CardContent>
-            <CardActions className={classes.center}>
+            <CardActions className={useStyles.center}>
               <Button variant='contained' href='/food'> Learn More </Button>
             </CardActions>
           </Card>
 
-          <Card className={classes.root} raised>
+          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
             <CardContent>
-              <Typography className={classes.title} color='textSecondary' gutterBottom>
+              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 Jobs
               </Typography>
               <Typography variant='h5' component='h2'>
                 Get Job Search Support
               </Typography>
             </CardContent>
-            <CardActions className={classes.center}>
+            <CardActions className={useStyles.center}>
               <Button variant='contained' href='/job'> Learn More </Button>
             </CardActions>
           </Card>
