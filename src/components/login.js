@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { app, facebookProvider } from '../firestore'
+import { app, facebookProvider, db } from '../firestore'
 
 const loginStyles = {
   width: '90%',
@@ -45,7 +45,10 @@ class Login extends Component {
         if(providers.length===0){
           //create user
           //should potentially disable this function and only allow admin to create users
-          return app.auth().createUserWithEmailAndPassword(email, password)
+
+          alert("Account does not exist.")
+         return app.auth().createUserWithEmailAndPassword(email, password)
+
         } else if (providers.indexOf("password") === -1){
           // they used fb
           this.loginForm.reset()
