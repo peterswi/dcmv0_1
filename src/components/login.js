@@ -44,6 +44,7 @@ class Login extends Component {
       .then((providers)=> {
         if(providers.length===0){
           //create user
+          //should potentially disable this function and only allow admin to create users
           return app.auth().createUserWithEmailAndPassword(email, password)
         } else if (providers.indexOf("password") === -1){
           // they used fb

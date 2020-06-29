@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from './logo.png'
 import './App.css'
+import OrgUser from './orgUser'
 
 const orgPage = () => {
   return (
@@ -16,6 +17,7 @@ const orgPage = () => {
         <h3>
                 Organization Page
         </h3>
+      Admin Add Users Here: <OrgUser/>
       </body>
       <footer className='App-footer'>
                 The End

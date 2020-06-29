@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-// import { base } from "./firestore";
-import * as firebase from 'firebase';
+import { app, db } from "../firestore";
 // import { makeStyles } from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -46,12 +45,12 @@ class OrgUser extends Component {
 
     addUser = e => {
         e.preventDefault();
-        const db =firebase.firestore();
         db.settings({
             timestampsInSnapshots:true
         });
         let ad = Boolean(this.state.isAdmin)
         var org = db.collection("organizations").doc(this.state.organizationId) //in here need to have ability to pull
+        //app.auth().createUserWithEmailAndPassword(this.state.email,this.state.password) -- can i do this?
          db.collection("users").add({
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -64,13 +63,13 @@ class OrgUser extends Component {
             .then(function (docRef) {
               console.log('Doc successful')
               org.update({
-                users: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+                users: db.FieldValue.arrayUnion(docRef.id)
               }).then(function(){
                 alert('User Successfully Added!')
 
                    if ( ad === true ){ // changed from == to ===, if problems arise
                       org.update({
-                        admin: firebase.firestore.FieldValue.arrayUnion(docRef.id)
+                        admin: db.FieldValue.arrayUnion(docRef.id)
                       }).then(function(){
                         alert('Added as admin!')
                       } )
@@ -99,7 +98,7 @@ class OrgUser extends Component {
 
   render() {
     return (
-        <form method="post" name="registrationEmailForm" action="form-to-email.php" onSubmit={this.addUser}>
+        <form onSubmit={this.addUser}>
           <FormControl >
             <InputLabel id="org-select">Organization Selection</InputLabel>
             <Select

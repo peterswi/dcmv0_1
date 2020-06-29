@@ -7,6 +7,7 @@ require('firebase/firestore')
 const app = firebase.initializeApp(firebaseConfig)
 const base = Rebase.createClass(app.database())
 const facebookProvider = new firebase.auth.FacebookAuthProvider()
-// const base = Rebase.createClass(app.database())
+const db =firebase.firestore()
 
-export { app, base, facebookProvider }
+
+export { app, base, facebookProvider, db }
