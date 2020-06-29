@@ -35,6 +35,34 @@ class Login extends Component {
   authWithEmailPassword () {
     // eslint-disable-next-line no-restricted-globals
     event.preventDefault()
+
+    const email = this.emailInput.value
+    const password = this.passwordInput.value
+
+    app.auth().fetchSignInMethodsForEmail(email)
+      .then((providers)=> {
+        if(providers.length===0){
+          //create user
+          return app.auth().createUserWithEmailAndPassword(email, password)
+        } else if (providers.indexOf("password") === -1){
+          // they used fb
+          this.loginForm.reset()
+          alert("Try Facebook Login")
+        } else{
+          //sign user in
+          return app.auth().signInWithEmailAndPassword(email,password)
+        }
+        })
+      .then((user)=>{
+        if (user && user.email){
+          this.loginForm.reset()
+          this.setState({redirect: true})
+        }
+      })
+      .catch((error) =>{
+        alert(error.message)
+        }
+      )
     console.log('authed with email')
     console.table([{
       email: this.emailInput.value,
