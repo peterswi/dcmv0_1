@@ -5,6 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import AccountBoxIcon from '@material-ui/icons/AccountBox';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import NavDrawer from "./navDrawer";
 import Grid from "@material-ui/core/Grid";
 import SearchIcon from '@material-ui/icons/Search'
@@ -78,30 +80,41 @@ class BasicNavBar extends React.Component {
                     GiveHelp
                   </Typography>
                 </Grid>
-                <Grid item xs>
+
                   {
                     this.props.authenticated
                       ?(
                         <div>
-                          <Button variant="contained" color="white" anchor="right" component={Link} to='/profile' >Profile</Button>
+                          <Button variant="contained" color="white"  component={Link} to='/profile' startIcon={<AccountBoxIcon /> }>Profile</Button>
+                          <IconButton color="inherit" anchor="right" component={Link} to='/logout' aria-label="Log out">
+                            <ExitToAppIcon/>
+                          </IconButton>
+
                         </div>
                       )
                       :(
                           <div>
                           <Button variant='contained' color="white" anchor="right" component={Link} to='/login'>Login</Button>
+
+
                           </div>
                       )
                     }
-                </Grid>
+
               </Grid>
             </Toolbar>
           </AppBar>
+        {this.props.authenticated
+          ?(
+            <NavDrawer
+              drawerOpened={this.state.drawerOpened}
+              toggleDrawer={this.toggleDrawer}
+            />
+          )
+          : null
 
-          <NavDrawer
-            authenticated={this.props.authenticated}
-            drawerOpened={this.state.drawerOpened}
-            toggleDrawer={this.toggleDrawer}
-          />
+        }
+
 
       </div>
     );

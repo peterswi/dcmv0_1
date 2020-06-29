@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 const Navigation = () => {
   return (
       <div className="App"> {/* throwing error here and unsure why*/}
-      {this.props.authenticated
-        ? (
-            <div>
+
+
               <br />
               <Button component={Link} to='/' variant='contained' color='secondary'> Home </Button><br /><br />
             <Button component={Link} to='/orgPage' variant='contained' color='secondary'> Organization
@@ -17,10 +16,7 @@ const Navigation = () => {
               User </Button><br/><br/>
             <Button component={Link} to='/contact' variant='contained' color='secondary'> About </Button>
             </div>
-        )
-        : null
-      }
-      </div>
+
   )
 }
 

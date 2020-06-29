@@ -10,10 +10,12 @@ import 'firebase/auth';
 import { base, app } from './firestore'
 import Home from './components/home'
 import Login from './components/login'
+import Logout from './components/logout'
 import RegisterUser from './components/registerUser'
 import orgPage from './components/orgPage'
 import contact from './components/contact'
 import Error from './components/error'
+import resources from './components/resources'
 import Job from './components/job'
 import Housing from './components/housing'
 import Covid from './components/covid'
@@ -21,9 +23,10 @@ import Food from './components/food'
 import Profile from './components/profile'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
+
 import BasicNavBar from './components/basicNavBar'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
-import resources from './components/resources'
+import CircularProgress from '@material-ui/core/CircularProgress'
 // import { CssBaseline } from '@material-ui/core' USE OR NO?
 
 const theme = createMuiTheme({
@@ -47,18 +50,21 @@ class App extends Component {
   constructor(){
     super();
     this.state={
-      authenticated: false
+      authenticated: false ,
+      loading: true
     };
   }
   componentWillMount () {
     this.removeAuthListener=app.auth().onAuthStateChanged((user)=> {
         if(user){
           this.setState({
-              authenticated: true
+              authenticated: true,
+              loading: false
           })
         } else{
           this.setState({
-            authenticated: false
+            authenticated: false,
+            loading: false
           })
         }
       }
@@ -69,6 +75,14 @@ class App extends Component {
   }
 
   render () {
+    if (this.state.loading === true){
+      return(
+        <div style={{textAlign: "center", position: "absolute", top:"25%", left:"50%"}}>
+          <h3>Loading</h3>
+          <CircularProgress/>
+        </div>
+      )
+    }
     return (
       <div>
 
@@ -79,6 +93,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
+            <Route exact path='/logout' component={Logout} />
             <Route path='/contact' component={contact} />
             <Route path='/registerUser' component={RegisterUser} />
             <Route path='/orgPage' component={orgPage} />
