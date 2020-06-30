@@ -85,7 +85,7 @@ class BasicNavBar extends React.Component {
                     this.props.authenticated
                       ?(
                         <div>
-                          <Button variant="contained" color="white"  component={Link} to='/profile' startIcon={<AccountBoxIcon /> }>Profile</Button>
+                          <Button variant="contained" color="secondary"  component={Link} to='/profile' startIcon={<AccountBoxIcon /> }>Profile</Button>
                           <IconButton color="inherit" anchor="right" component={Link} to='/logout' aria-label="Log out">
                             <ExitToAppIcon/>
                           </IconButton>

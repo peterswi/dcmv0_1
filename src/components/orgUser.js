@@ -20,7 +20,7 @@ class OrgUser extends Component {
          lastname: "",
          email:"",
          password:"",
-         phone: null,
+         phone: "",
          organizationId: "",
          isAdmin: false
     };
@@ -51,7 +51,7 @@ class OrgUser extends Component {
             timestampsInSnapshots:true
         });
         let ad = Boolean(this.state.isAdmin)
-        var org = db.collection("organizations").doc(this.state.organizationId) //in here need to have ability to pull
+        let org = db.collection("organizations").doc(this.state.organizationId) //in here need to have ability to pull
 
          db.collection("users").add({
             firstname: this.state.firstname,
@@ -64,14 +64,14 @@ class OrgUser extends Component {
         })
             .then(function (docRef) {
               console.log('Doc successful')
+              const arrayU= firebase.firestore.FieldValue.arrayUnion
               org.update({
-                users: db.FieldValue.arrayUnion(docRef.id)
+                users: arrayU(docRef.id)
               }).then(function(){
                 alert('User Successfully Added!')
-                console.log('Added to an org')
                    if ( ad === true ){ // changed from == to ===, if problems arise
                       org.update({
-                        admin: db.FieldValue.arrayUnion(docRef.id)
+                        admin: arrayU(docRef.id)
                       }).then(function(){
                         alert('Added as admin!')
                       } )
@@ -149,7 +149,7 @@ class OrgUser extends Component {
             onChange={this.updateInput}
             value={this.state.phone}
           /><br /><br />
-            Administrator <nbsp/><nbsp/>
+            Administrator
             <input
                 type="checkbox"
                 name="isAdmin"
