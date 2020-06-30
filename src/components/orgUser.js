@@ -13,8 +13,8 @@ import Select from '@material-ui/core/Select';
 
 class OrgUser extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
          firstname: "",
          lastname: "",
@@ -22,7 +22,8 @@ class OrgUser extends Component {
          password:"",
          phone: "",
          organizationId: "",
-         isAdmin: false
+         isAdmin: false,
+         organizations: []
     };
   }
 
@@ -37,14 +38,25 @@ class OrgUser extends Component {
             [e.target.name]: true
         });
     };
-    /*
-        getOrgs = () =>{
-          let d =firebase.firestore();
-          var orgs = d.collections("organizations").get()
-        }
-    */
 
-    addUser = e => {
+
+  async getOrgs(){
+          const orgs = await firebase.firestore().collection('organizations')
+          orgs.get().then((querySnapshot) =>{
+            const tempDoc =querySnapshot.docs.map((doc)=>{
+              return {id: doc.id, name: doc.data().OrgName}
+            })
+            console.log(tempDoc)
+          })
+        }
+
+  componentDidMount () {
+    this.setState({
+      organizations:[this.getOrgs()]
+    })
+  }
+
+  addUser = e => {
         e.preventDefault();
         const db = firebase.firestore();
         db.settings({
@@ -99,6 +111,13 @@ class OrgUser extends Component {
 };
 
   render() {
+    // trying to package up the info from the orgs into a usable format
+    const { organizations } = this.state
+    let orgsList = organizations.length>0 && organizations.map((item, i)=>{
+      return(
+        <MenuItem key={i} value={item.id}>{item.name}</MenuItem>
+      )
+    }, this)
     return (
         <form onSubmit={this.addUser}>
           <FormControl >
@@ -109,9 +128,7 @@ class OrgUser extends Component {
               value={this.state.organizationId}
               onChange={this.updateInput}
               >
-              <MenuItem value={"Charlie's House"}>Chuck's House</MenuItem>
-              <MenuItem value={"CityMission"}>City Mission Boston</MenuItem>
-              <MenuItem value={"PineStreetInn"}>Pine Street Inn</MenuItem>
+              {orgsList}
             </Select>
           </FormControl><br /><br />
           <input
