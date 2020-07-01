@@ -1,11 +1,11 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 
-export default function Food () {
+export default function Job () {
   return (
     <div className='App'>
       <header>
-        Get Food Resources
+        Get Job Search Resources
       </header>
       <body />
       <footer />

@@ -1,11 +1,11 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 
-export default function Job () {
+export default function Covid () {
   return (
     <div className='App'>
       <header>
-        Get Job Search Resources
+        Covid-19 Resources
       </header>
       <body />
       <footer />
