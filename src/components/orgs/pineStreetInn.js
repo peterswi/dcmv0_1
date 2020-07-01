@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import '../App.css'
 // import { makeStyles } from '@material-ui/core/styles'
-import OrgUser from "../orgUser"
+import OrgUser from '../orgUser'
 
 /*
 const useStyles = makeStyles({
@@ -30,22 +30,21 @@ const useStyles = makeStyles({
 */
 
 class PineStreet extends Component {
-  constructor (props){
-    super(props);
-    this.state={
-      orgId: "PineStreetInn"
-    };
+  constructor (props) {
+    super(props)
+    this.state = {
+      orgId: 'PineStreetInn'
+    }
   }
-
 
   render () {
     return (
-      <div className="App">
-        <header className="App-header">
-         <h2><b> The Pine Street Inn</b></h2>
+      <div className='App'>
+        <header className='App-header'>
+          <h2><b> The Pine Street Inn</b></h2>
         </header>
-        <body className="App-page">
-        Admin: Add User Here <b/> <OrgUser orgId={this.state.orgId}/>
+        <body className='App-page'>
+        Admin: Add User Here <b /> <OrgUser orgId={this.state.orgId} />
         </body>
       </div>
     )

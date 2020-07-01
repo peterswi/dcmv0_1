@@ -40,7 +40,7 @@ export default function Resources () {
         <h1>Resource Page</h1>
         <p>Click one of the resource cards for more help</p>
       </header>
-      <body className="App-page">
+      <body className='App-page'>
         <Card className={classes.root} raised>
           <CardContent>
             <Typography className={classes.title} color='textSecondary' gutterBottom>

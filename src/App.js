@@ -47,7 +47,7 @@ const theme = createMuiTheme({
     }
   }
 })
- /*
+/*
  //Basically, trying to figure out how to pass this.state.authenticated to the router below. Figure it out later
 const homeAuth =(props) =>{
   return(
@@ -57,40 +57,41 @@ const homeAuth =(props) =>{
 */
 
 class App extends Component {
-  constructor (props){
-    super(props);
-    this.state={
-      authenticated: false ,
+  constructor (props) {
+    super(props)
+    this.state = {
+      authenticated: false,
       loading: true
-    };
+    }
   }
+
   componentWillMount () {
-    this.removeAuthListener=app.auth().onAuthStateChanged((user)=> {
-        if(user){
-          this.setState({
-              authenticated: true,
-              loading: false
-          })
-        } else{
-          this.setState({
-            authenticated: false,
-            loading: false
-          })
-        }
+    this.removeAuthListener = app.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          authenticated: true,
+          loading: false
+        })
+      } else {
+        this.setState({
+          authenticated: false,
+          loading: false
+        })
       }
+    }
     )
   }
+
   componentWillUnmount () {
-    this.removeAuthListener();
+    this.removeAuthListener()
   }
 
-
   render () {
-    if (this.state.loading === true){
-      return(
-        <div style={{textAlign: "center", position: "absolute", top:"25%", left:"50%"}}>
+    if (this.state.loading === true) {
+      return (
+        <div style={{ textAlign: 'center', position: 'absolute', top: '25%', left: '50%' }}>
           <h3>Loading</h3>
-          <CircularProgress/>
+          <CircularProgress />
         </div>
       )
     }
@@ -106,7 +107,7 @@ class App extends Component {
             <Route exact path='/logout' component={Logout} />
             <Route path='/contact' component={contact} />
             <Route path='/orgPage' component={OrgPage} />
-            <Route path='/pineStreet' component={PineStreet}/>
+            <Route path='/pineStreet' component={PineStreet} />
             <Route path='/resources' component={resources} />
             <Route path='/food' component={Food} />
             <Route path='/job' component={Job} />

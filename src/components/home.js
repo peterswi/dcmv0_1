@@ -35,8 +35,8 @@ const mystyles = makeStyles({
 })
 
 export default function Home () {
-  //this classes thing broke somehow-- need to correct that later on.
-  //const classes = mystyles()
+  // this classes thing broke somehow-- need to correct that later on.
+  // const classes = mystyles()
 
   return (
     <div className='App'>
@@ -48,77 +48,76 @@ export default function Home () {
         <p />
       </header>
 
-          <body>
-          <p>
-            <h2><b> Click a link to visit our different pages</b></h2>
-          </p>
-          <Button variant='contained' color='white' href='/orgPage'> Visit an Organization Page</Button>
-          <br/> <br/>
+      <body>
+        <p>
+          <h2><b> Click a link to visit our different pages</b></h2>
+        </p>
+        <Button variant='contained' color='white' href='/orgPage'> Visit an Organization Page</Button>
+        <br /> <br />
 
-          {/* indented block here where all the cards will live */}
-          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
-            <CardContent>
-              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
+        {/* indented block here where all the cards will live */}
+        <Card style={{ minWidth: 275, float: 'left', margin: 'auto' }} raised>
+          <CardContent>
+            <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 COVID-19
-              </Typography>
-              <Typography variant='h5' component='h2'>
+            </Typography>
+            <Typography variant='h5' component='h2'>
                 Get CoronaVirus Support
-              </Typography>
-            </CardContent>
-            <CardActions className={useStyles.center}>
-              <Button variant='contained' href='/covid'> Learn More </Button>
-            </CardActions>
-          </Card>
+            </Typography>
+          </CardContent>
+          <CardActions className={useStyles.center}>
+            <Button variant='contained' href='/covid'> Learn More </Button>
+          </CardActions>
+        </Card>
           &nbsp;&nbsp;
-          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
-            <CardContent>
-              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
+        <Card style={{ minWidth: 275, float: 'left', margin: 'auto' }} raised>
+          <CardContent>
+            <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 Housing
-              </Typography>
-              <Typography variant='h5' component='h2'>
+            </Typography>
+            <Typography variant='h5' component='h2'>
                 Get Housing Support
-              </Typography>
-            </CardContent>
-            <CardActions className={useStyles.center}>
-              <Button variant='contained' href='/housing'> Learn More </Button>
-            </CardActions>
-          </Card>
+            </Typography>
+          </CardContent>
+          <CardActions className={useStyles.center}>
+            <Button variant='contained' href='/housing'> Learn More </Button>
+          </CardActions>
+        </Card>
 
-          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
-            <CardContent>
-              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
+        <Card style={{ minWidth: 275, float: 'left', margin: 'auto' }} raised>
+          <CardContent>
+            <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 Food
-              </Typography>
-              <Typography variant='h5' component='h2'>
+            </Typography>
+            <Typography variant='h5' component='h2'>
                 Get Food Support
-              </Typography>
-            </CardContent>
-            <CardActions className={useStyles.center}>
-              <Button variant='contained' href='/food'> Learn More </Button>
-            </CardActions>
-          </Card>
+            </Typography>
+          </CardContent>
+          <CardActions className={useStyles.center}>
+            <Button variant='contained' href='/food'> Learn More </Button>
+          </CardActions>
+        </Card>
 
-          <Card style={{minWidth: 275, float: 'left', margin: 'auto'}} raised>
-            <CardContent>
-              <Typography className={useStyles.title} color='textSecondary' gutterBottom>
+        <Card style={{ minWidth: 275, float: 'left', margin: 'auto' }} raised>
+          <CardContent>
+            <Typography className={useStyles.title} color='textSecondary' gutterBottom>
                 Jobs
-              </Typography>
-              <Typography variant='h5' component='h2'>
+            </Typography>
+            <Typography variant='h5' component='h2'>
                 Get Job Search Support
-              </Typography>
-            </CardContent>
-            <CardActions className={useStyles.center}>
-              <Button variant='contained' href='/job'> Learn More </Button>
-            </CardActions>
-          </Card>
+            </Typography>
+          </CardContent>
+          <CardActions className={useStyles.center}>
+            <Button variant='contained' href='/job'> Learn More </Button>
+          </CardActions>
+        </Card>
 
-          <br/><br/> <br/><br/><br/> <br/><br/><br/> <br/>
+        <br /><br /> <br /><br /><br /> <br /><br /><br /> <br />
 
-          <Button variant='contained' color='white' href='/resources'> View All Resources</Button>
-          <br/><br/>
+        <Button variant='contained' color='white' href='/resources'> View All Resources</Button>
+        <br /><br />
 
-
-          </body>
+      </body>
 
       <br /><br />
       <footer className='App-footer'>

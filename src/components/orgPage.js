@@ -32,18 +32,18 @@ const useStyles = makeStyles({
   }
 })
 
-export default function OrgPage() {
+export default function OrgPage () {
   const classes = useStyles()
-    return (
-      <div className='App'>
-        <img src={logo} alt='logo'/>
-        <header className='App-header'>
-          <h1>
+  return (
+    <div className='App'>
+      <img src={logo} alt='logo' />
+      <header className='App-header'>
+        <h1>
             Organization Page
-          </h1>
-        </header>
+        </h1>
+      </header>
 
-        <body className={classes.center}>
+      <body className={classes.center}>
         <h3>
           Visit an Organization Page
         </h3>
@@ -60,10 +60,9 @@ export default function OrgPage() {
             <Button variant='contained' href='/pineStreet'> Learn More </Button>
           </CardActions>
         </Card>
-        </body>
+      </body>
 
-      </div>
+    </div>
 
-    )
-
+  )
 }

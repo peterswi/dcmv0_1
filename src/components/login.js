@@ -12,7 +12,6 @@ const loginStyles = {
 }
 
 class Login extends Component {
-
   constructor (props) {
     super(props)
     this.authWithFacebook = this.authWithFacebook.bind(this)
@@ -41,43 +40,40 @@ class Login extends Component {
     const password = this.passwordInput.value
 
     app.auth().fetchSignInMethodsForEmail(email)
-      .then((providers)=> {
-        if(providers.length===0){
-          //create user
-          //should potentially disable this function and only allow admin to create users
-          alert("Creating new account with this email.")
-         return app.auth().createUserWithEmailAndPassword(email, password)
-
-        } else if (providers.indexOf("password") === -1){
+      .then((providers) => {
+        if (providers.length === 0) {
+          // create user
+          // should potentially disable this function and only allow admin to create users
+          alert('Creating new account with this email.')
+          return app.auth().createUserWithEmailAndPassword(email, password)
+        } else if (providers.indexOf('password') === -1) {
           // they used fb
           this.loginForm.reset()
-          alert("Try Facebook Login")
-        } else{
-          //sign user in
-          return app.auth().signInWithEmailAndPassword(email,password)
+          alert('Try Facebook Login')
+        } else {
+          // sign user in
+          return app.auth().signInWithEmailAndPassword(email, password)
         }
-        })
-      .then((user)=>{
-          if(user && user.email){
-            // not entering this block rn, need to figure out why
-            alert('received')
-          }
-          this.loginForm.reset()
-          this.setState({redirect: true})
-
       })
-      .catch((error) =>{
-        alert(error.message)
+      .then((user) => {
+        if (user && user.email) {
+          // not entering this block rn, need to figure out why
+          alert('received')
         }
+        this.loginForm.reset()
+        this.setState({ redirect: true })
+      })
+      .catch((error) => {
+        alert(error.message)
+      }
       )
     console.log('authed with email')
   }
 
   render () {
-
-      if (this.state.redirect === true) {
-        return( <Redirect to='/'/>)
-      }
+    if (this.state.redirect === true) {
+      return (<Redirect to='/' />)
+    }
 
     return (
       <div style={loginStyles}>
@@ -92,7 +88,7 @@ class Login extends Component {
             <h3>
               <u>Note:</u>
             </h3>
-            If you don't have an account already, this form will create one for you.<br/>
+            If you don't have an account already, this form will create one for you.<br />
             <b>Please use the email associated with your organization. </b>
           </div>
           <label className='pt-label'>
@@ -103,7 +99,7 @@ class Login extends Component {
             Password
             <input style={{ width: '100%' }} className='pt-input' name='password' type='password' ref={(input) => { this.passwordInput = input }} placeholder='password' />
           </label>
-          <input style={{ width: '100%' }} className='pt-input' type='submit'  value='Log In' />
+          <input style={{ width: '100%' }} className='pt-input' type='submit' value='Log In' />
         </form>
       </div>
     )
