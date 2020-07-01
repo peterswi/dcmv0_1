@@ -116,7 +116,7 @@ export default function Home () {
 
           <Button variant='contained' color='white' href='/resources'> View All Resources</Button>
           <br/><br/>
-          <Button variant='contained' color='white' href='/registerUser'> Add a new User</Button>
+
 
           </body>
 

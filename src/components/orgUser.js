@@ -135,7 +135,8 @@ class OrgUser extends Component {
             value={this.state.lastname}
           /><br /><br />
           <input
-            type="text"
+            key='email'
+            type="email"
             name="email"
             placeholder="Email"
             onChange={this.updateInput}

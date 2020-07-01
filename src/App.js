@@ -11,7 +11,7 @@ import { app } from './firestore'
 import Home from './components/home'
 import Login from './components/login'
 import Logout from './components/logout'
-import RegisterUser from './components/registerUser'
+// import RegisterUser from './defunctPages/registerUser'
 import OrgPage from './components/orgPage'
 import PineStreet from './components/orgs/pineStreetInn'
 import contact from './components/contact'
@@ -104,7 +104,6 @@ class App extends Component {
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
             <Route path='/contact' component={contact} />
-            <Route path='/registerUser' component={RegisterUser} />
             <Route path='/orgPage' component={OrgPage} />
             <Route path='/pineStreet' component={PineStreet}/>
             <Route path='/resources' component={resources} />

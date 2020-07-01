@@ -40,7 +40,7 @@ export default function Resources () {
         <h1>Resource Page</h1>
         <p>Click one of the resource cards for more help</p>
       </header>
-      <body>
+      <body className="App-page">
         <Card className={classes.root} raised>
           <CardContent>
             <Typography className={classes.title} color='textSecondary' gutterBottom>
@@ -99,10 +99,10 @@ export default function Resources () {
         <Card className={classes.root} raised>
           <CardContent>
             <Typography className={classes.title} color='textSecondary' gutterBottom>
-                COVID-19
+                General
             </Typography>
             <Typography variant='h5' component='h2'>
-                Get CoronaVirus Support
+                Get General Support
             </Typography>
           </CardContent>
           <CardActions className={classes.center}>
@@ -113,10 +113,10 @@ export default function Resources () {
         <Card className={classes.root} raised>
           <CardContent>
             <Typography className={classes.title} color='textSecondary' gutterBottom>
-                Housing
+                Family
             </Typography>
             <Typography variant='h5' component='h2'>
-                Get Housing Support
+                Get Family Support
             </Typography>
           </CardContent>
           <CardActions className={classes.center}>
@@ -127,10 +127,10 @@ export default function Resources () {
         <Card className={classes.root} raised>
           <CardContent>
             <Typography className={classes.title} color='textSecondary' gutterBottom>
-                Food
+                Finances
             </Typography>
             <Typography variant='h5' component='h2'>
-                Get Food Support
+                Get Financial Support
             </Typography>
           </CardContent>
           <CardActions className={classes.center}>
@@ -141,10 +141,10 @@ export default function Resources () {
         <Card className={classes.root} raised>
           <CardContent>
             <Typography className={classes.title} color='textSecondary' gutterBottom>
-                Jobs
+                Healthcare
             </Typography>
             <Typography variant='h5' component='h2'>
-                Get Job Search Support
+                Get Medical Support
             </Typography>
           </CardContent>
           <CardActions className={classes.center}>

@@ -1,6 +1,6 @@
 import React from 'react'
-import OrgUser from './orgUser'
-import './App.css'
+import OrgUser from '../components/orgUser'
+import '../components/App.css'
 
 const RegisterUser = () => {
   return (
