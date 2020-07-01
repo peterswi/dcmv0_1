@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { app, facebookProvider, db } from '../firestore'
+import { app, facebookProvider } from '../firestore'
 
 const loginStyles = {
   width: '90%',
@@ -45,8 +45,7 @@ class Login extends Component {
         if(providers.length===0){
           //create user
           //should potentially disable this function and only allow admin to create users
-
-          alert("Account does not exist.")
+          alert("Creating new account with this email.")
          return app.auth().createUserWithEmailAndPassword(email, password)
 
         } else if (providers.indexOf("password") === -1){
@@ -90,10 +89,11 @@ class Login extends Component {
         <form onSubmit={(event) => this.authWithEmailPassword(event)} ref={(form) => { this.loginForm = form }}>
 
           <div style={{ marginBottom: '10px' }} className='pt-callout'>
-            <h5>
-              Note
-            </h5>
-            If you don't have an account already, this form will create one for you.
+            <h3>
+              <u>Note:</u>
+            </h3>
+            If you don't have an account already, this form will create one for you.<br/>
+            <b>Please use the email associated with your organization. </b>
           </div>
           <label className='pt-label'>
             Email

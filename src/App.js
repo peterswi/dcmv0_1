@@ -22,6 +22,7 @@ import Housing from './components/resources/housing'
 import Covid from './components/resources/covid'
 import Food from './components/resources/food'
 import Profile from './components/profile'
+import ProfileUpdate from './components/profileUpdate'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 
@@ -112,6 +113,7 @@ class App extends Component {
             <Route path='/housing' component={Housing} />
             <Route path='/covid' component={Covid} />
             <Route path='/profile' component={Profile} />
+            <Route path='/profileUpdate' component={ProfileUpdate} />
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>

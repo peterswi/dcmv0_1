@@ -17,6 +17,7 @@ var transporter = nodemailer.createTransport({
     user: 'will.givecard@gmail.com',
     pass: 'W615Peters!'
   }
+
 });
 
 exports.sendEmail= functions.firestore.document('users/{userId}').onCreate((snap, context)=>{
