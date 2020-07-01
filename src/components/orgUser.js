@@ -2,11 +2,11 @@ import React, {Component} from 'react';
 //import { app, db } from "../firestore";
 import * as firebase from 'firebase';
 // import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
+// import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
 // import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
 
 // this is based on a basic intro to firestore + React
 
@@ -21,9 +21,7 @@ class OrgUser extends Component {
          email:"",
          password:"",
          phone: "",
-         organizationId: "",
          isAdmin: false,
-         organizations: []
     };
   }
 
@@ -39,7 +37,7 @@ class OrgUser extends Component {
         });
     };
 
-
+/* FROM PREVIOUS VERSION-- get all orgs and have dropdown list
   async getOrgs(){
           const orgs = await firebase.firestore().collection('organizations')
           orgs.get().then((querySnapshot) =>{
@@ -55,6 +53,7 @@ class OrgUser extends Component {
       organizations:[this.getOrgs()]
     })
   }
+*/
 
   addUser = e => {
         e.preventDefault();
@@ -63,7 +62,7 @@ class OrgUser extends Component {
             timestampsInSnapshots:true
         });
         let ad = Boolean(this.state.isAdmin)
-        let org = db.collection("organizations").doc(this.state.organizationId) //in here need to have ability to pull
+        let org = db.collection("organizations").doc(this.props.orgId) //in here need to have ability to pull
 
          db.collection("users").add({
             firstname: this.state.firstname,
@@ -111,26 +110,9 @@ class OrgUser extends Component {
 };
 
   render() {
-    // trying to package up the info from the orgs into a usable format
-    const { organizations } = this.state
-    let orgsList = organizations.length>0 && organizations.map((item, i)=>{
-      return(
-        <MenuItem key={i} value={item.id}>{item.name}</MenuItem>
-      )
-    }, this)
     return (
         <form onSubmit={this.addUser}>
-          <FormControl >
-            <InputLabel id="org-select">Organization Selection</InputLabel>
-            <Select
-              labelId="org-select"
-              name="organizationId"
-              value={this.state.organizationId}
-              onChange={this.updateInput}
-              >
-              {orgsList}
-            </Select>
-          </FormControl><br /><br />
+
           <input
             type="password"
             name="password"
