@@ -21,10 +21,13 @@ var transporter = nodemailer.createTransport({
 
 exports.sendEmail= functions.firestore.document('users/{userId}').onCreate((snap, context)=>{
     const mailOptions = {
-      from: `wpeters615@gmail.com`,
+      from: `will.givecard@gmail.com`,
       to: snap.data().email,
       subject: 'Org Account Created',
-      html: `<h1>Order Confirmation</h1>
+      html: `<h1>New User Creation</h1>
+        <p> Greetings, ${snap.data().firstname}!</p>
+        <p> You received this email because the administrator of your organization added you to their page within GiveCard's digital case management system.</p>
+        <p> To complete your registration, log into the case management system using the email below.</p>
        <p> <b>Email: </b>${snap.data().email} </p>`
     };
 
