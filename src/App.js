@@ -7,19 +7,20 @@ import withFirebaseAuth from 'react-with-firebase-auth'
 import * as firebaseApp from 'firebase/app';
 import 'firebase/auth';
 */
-import { base, app } from './firestore'
+import { app } from './firestore'
 import Home from './components/home'
 import Login from './components/login'
 import Logout from './components/logout'
 import RegisterUser from './components/registerUser'
-import orgPage from './components/orgPage'
+import OrgPage from './components/orgPage'
+import PineStreet from './components/orgs/pineStreetInn'
 import contact from './components/contact'
 import Error from './components/error'
 import resources from './components/resources'
-import Job from './components/job'
-import Housing from './components/housing'
-import Covid from './components/covid'
-import Food from './components/food'
+import Job from './components/resources/job'
+import Housing from './components/resources/housing'
+import Covid from './components/resources/covid'
+import Food from './components/resources/food'
 import Profile from './components/profile'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
@@ -55,8 +56,8 @@ const homeAuth =(props) =>{
 */
 
 class App extends Component {
-  constructor(){
-    super();
+  constructor (props){
+    super(props);
     this.state={
       authenticated: false ,
       loading: true
@@ -98,14 +99,14 @@ class App extends Component {
         <MuiThemeProvider theme={theme}>
           <BasicNavBar authenticated={this.state.authenticated} />
 
-          {/* <PrimarySearchAppBar/> */}
           <Switch>
             <Route exact path='/' render={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
             <Route path='/contact' component={contact} />
             <Route path='/registerUser' component={RegisterUser} />
-            <Route path='/orgPage' component={orgPage} />
+            <Route path='/orgPage' component={OrgPage} />
+            <Route path='/pineStreet' component={PineStreet}/>
             <Route path='/resources' component={resources} />
             <Route path='/food' component={Food} />
             <Route path='/job' component={Job} />
