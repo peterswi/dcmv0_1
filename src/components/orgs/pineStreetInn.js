@@ -3,7 +3,9 @@ import '../App.css'
 // import { makeStyles } from '@material-ui/core/styles'
 import OrgUser from '../orgUser'
 import {app, db} from '../../firestore'
-import * as firebase from 'firebase';
+
+// a little bit of bulma
+import 'bulma/css/bulma.css'
 
 /*
 const useStyles = makeStyles({
@@ -76,6 +78,11 @@ class PineStreet extends Component {
           )
           : null
         }
+          <div className="buttons">
+            <a className="button is-small is-warning" >Bulma Button</a>
+            <a className="button is-normal is-danger" >Bulma Button</a>
+            <a className="button is-large is-success" >Bulma Button</a>
+          </div>
 
 
         </body>
