@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './components/App.css'
+import 'bulma/css/bulma.css'
 /*
 import firebase from './components/firestore'
 import withFirebaseAuth from 'react-with-firebase-auth'
