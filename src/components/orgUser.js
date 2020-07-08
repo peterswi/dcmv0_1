@@ -19,7 +19,6 @@ class OrgUser extends Component {
          firstname: "",
          lastname: "",
          email:"",
-         password:"",
          phone: "",
          isAdmin: false,
     };
@@ -69,7 +68,6 @@ class OrgUser extends Component {
             lastname: this.state.lastname,
             email: this.state.email,
             phone: Number(this.state.phone),
-            password: this.state.password,
             isAdmin: ad
 
         })
@@ -112,14 +110,7 @@ class OrgUser extends Component {
   render() {
     return (
         <form onSubmit={this.addUser}>
-
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            onChange={this.updateInput}
-            value={this.state.password}
-          /><br /><br />
+          <br /><br />
           <input
             type="text"
             name="firstname"
