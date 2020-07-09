@@ -10,6 +10,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import { useStyles } from './classes'
 
+import 'bulma/css/bulma.css'
+import './sass/mystyles.scss'
+
 const mystyles = makeStyles({
   root: {
     minWidth: 275,

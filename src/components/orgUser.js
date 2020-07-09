@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 //import { app, db } from "../firestore";
 import * as firebase from 'firebase';
+import 'bulma/css/bulma.css'
+import './sass/mystyles.scss'
 // import { makeStyles } from '@material-ui/core/styles';
 // import InputLabel from '@material-ui/core/InputLabel';
 // import MenuItem from '@material-ui/core/MenuItem';
@@ -110,44 +112,72 @@ class OrgUser extends Component {
   render() {
     return (
         <form onSubmit={this.addUser}>
-          <br /><br />
-          <input
-            type="text"
-            name="firstname"
-            placeholder="First name"
-            onChange={this.updateInput}
-            value={this.state.firstname}
-          />
-          <input
-            type="text"
-            name="lastname"
-            placeholder="Last name"
-            onChange={this.updateInput}
-            value={this.state.lastname}
-          /><br /><br />
-          <input
-            key='email'
-            type="email"
-            name="email"
-            placeholder="Email"
-            onChange={this.updateInput}
-            value={this.state.email}
-          />
-          <input
-            type="number"
-            name="phone"
-            placeholder="Phone Number"
-            onChange={this.updateInput}
-            value={this.state.phone}
-          /><br /><br />
-            Administrator
-            <input
-                type="checkbox"
-                name="isAdmin"
-                onChange={this.onDeclareAdmin}
-                value={this.state.isAdmin}
-                />
-          <button type="submit">Submit</button>
+          <div className="field">
+            <label className="label">First Name</label>
+            <div className="control">
+              <input className="input"
+                type="text"
+                name="firstname"
+                placeholder="Eg, Bill"
+                onChange={this.updateInput}
+                value={this.state.firstname}
+              />
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Last Name</label>
+            <div className="control">
+              <input className="input"
+                type="text"
+                name="lastname"
+                placeholder="Eg, Peterson"
+                onChange={this.updateInput}
+                value={this.state.lastname}
+              />
+            </div>
+          </div>
+          <div className="field">
+            <label className="label">Email</label>
+            <div className="control">
+              <input className="input"
+                key='email'
+                type="email"
+                name="email"
+                placeholder="Eg, give-fam@givecard.io"
+                onChange={this.updateInput}
+                value={this.state.email}
+              />
+            </div>
+          </div>
+
+          <div className="field">
+            <label className="label">Phone Number</label>
+            <div className="control">
+              <input className="label"
+                type="number"
+                name="phone"
+                placeholder="Eg, 617 8866 8490"
+                onChange={this.updateInput}
+                value={this.state.phone}
+              />
+            </div>
+          </div>
+
+            <div className="control">
+              <label className="checkbox">
+                <input
+                    type="checkbox"
+                    name="isAdmin"
+                    onChange={this.onDeclareAdmin}
+                    value={this.state.isAdmin}
+                    />
+                      Administrator
+              </label>
+            </div>
+                <div className="control">
+                  <button className="button is-primary" type="submit">Submit</button>
+                </div>
+
         </form>
         );
       }

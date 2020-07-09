@@ -65,7 +65,7 @@ class PineStreet extends Component {
     return (
       <div className='heading'>
         <header className='App-header'>
-          <h2><b> The Pine Street Inn</b></h2>
+          <h2 className="title"><b> The Pine Street Inn</b></h2>
         </header>
         <body className="section">
         <div className="textarea">
@@ -85,11 +85,7 @@ class PineStreet extends Component {
           )
           : null
         }
-          <div className="buttons">
-            <button className="button is-small is-warning" >Bulma Button</button>
-            <button className="button is-normal is-danger" >Bulma Button</button>
-            <button className="button is-large is-selected is-link" >Bulma Button</button>
-          </div>
+
 
 
         </body>
