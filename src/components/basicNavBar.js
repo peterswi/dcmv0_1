@@ -15,7 +15,8 @@ import { useStyles } from './classes'
 import { Link } from 'react-router-dom'
 
 //I dont think UseStyles is working currently
-
+import 'bulma/css/bulma.css'
+import './sass/mystyles.scss'
 
 class BasicNavBar extends React.Component {
 
@@ -37,9 +38,9 @@ class BasicNavBar extends React.Component {
 
 
     return (
-      <div className={useStyles.grow}>
+      <div className="navbar is-spaced">
 
-          <AppBar position="static">
+          <AppBar position="dynamic">
             <Toolbar>
               <Grid container spacing={1} alignItems='center' justify='center'>
                 <Grid item xs>
