@@ -6,6 +6,7 @@ import {app, db} from '../../firestore'
 
 // a little bit of bulma
 import 'bulma/css/bulma.css'
+import '../sass/mystyles.scss'
 
 /*
 const useStyles = makeStyles({
@@ -62,26 +63,32 @@ class PineStreet extends Component {
 
 
     return (
-      <div className='App'>
+      <div className='heading'>
         <header className='App-header'>
           <h2><b> The Pine Street Inn</b></h2>
         </header>
-        <body className='App-page'>
-        <div>
+        <body className="section">
+        <div className="textarea">
           <h3>This is the content for the Pine Street Inn's Page </h3>
         </div>
         {this.state.admin
           ?(
-          <div>
-            Admin: Add User Here <b/> <OrgUser orgId={this.state.orgId}/>
+          <div className="section has-text-centered">
+            <div className="is-black">
+              Admin: Add User Here
+            </div>
+             <div>
+               <OrgUser orgId={this.state.orgId}/>
+             </div>
+
           </div>
           )
           : null
         }
           <div className="buttons">
-            <a className="button is-small is-warning" >Bulma Button</a>
-            <a className="button is-normal is-danger" >Bulma Button</a>
-            <a className="button is-large is-success" >Bulma Button</a>
+            <button className="button is-small is-warning" >Bulma Button</button>
+            <button className="button is-normal is-danger" >Bulma Button</button>
+            <button className="button is-large is-selected is-link" >Bulma Button</button>
           </div>
 
 

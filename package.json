@@ -29,7 +29,7 @@
     "standard": "*"
   },
   "scripts": {
-    "css-build": "node-sass --omit-source-map-url sass/mystyles.scss css/mystyles.css",
+    "css-build": "node-sass --omit-source-map-url src/components/sass/mystyles.scss css/mystyles.css",
     "css-watch": "npm run css-build -- --watch",
     "start": "react-scripts start && npm run css-watch",
     "build": "react-scripts build",
