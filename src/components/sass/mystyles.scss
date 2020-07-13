@@ -3,6 +3,18 @@
 // Import a Google Font
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
+// Import only what you need from Bulma
+@import "node_modules/bulma/sass/utilities/all";
+@import "node_modules/bulma/sass/base/all";
+@import "node_modules/bulma/sass/elements/button";
+@import "node_modules/bulma/sass/elements/container";
+@import "node_modules/bulma/sass/elements/title";
+@import "node_modules/bulma/sass/form/all";
+@import "node_modules/bulma/sass/components/navbar";
+@import "node_modules/bulma/sass/layout/hero";
+@import "node_modules/bulma/sass/layout/section";
+@import "node_modules/bulma/bulma.sass";
+
 // Set your brand colors
 
 $green: #00ff7f;
@@ -29,14 +41,5 @@ $header-background-color: $green;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
+$is-info: $dark-green;
 
-// Import only what you need from Bulma
-@import "node_modules/bulma/sass/utilities/all";
-@import "node_modules/bulma/sass/base/all";
-@import "node_modules/bulma/sass/elements/button";
-@import "node_modules/bulma/sass/elements/container";
-@import "node_modules/bulma/sass/elements/title";
-@import "node_modules/bulma/sass/form/all";
-@import "node_modules/bulma/sass/components/navbar";
-@import "node_modules/bulma/sass/layout/hero";
-@import "node_modules/bulma/sass/layout/section";
