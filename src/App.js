@@ -28,6 +28,7 @@ import ProfileUpdate from './components/profileUpdate'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 
 import BasicNavBar from './components/basicNavBar'
+import NavBar from './components/navbar'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import CircularProgress from '@material-ui/core/CircularProgress'
 // import { CssBaseline } from '@material-ui/core' USE OR NO?
@@ -101,7 +102,7 @@ class App extends Component {
 
         <MuiThemeProvider theme={theme}>
           <BasicNavBar authenticated={this.state.authenticated} />
-
+          <NavBar/>
           <Switch>
             <Route exact path='/' render={Home} />
             <Route exact path='/login' component={Login} />
