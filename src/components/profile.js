@@ -30,11 +30,11 @@ export default function Profile () {
           <br /> <b>Phone Number: </b>{phone}
           <br /> <b>User ID: </b>{uid}
           <br /> <b>Photo URL: </b>{photo}
-          <br /><br /><br />
+          <br /><br />
           <a className="button is-primary" href='/profileUpdate'>Update Profile Info</a>
         </section>
+        <br /><br />
       </body>
-      <footer />
     </div>
   )
 };

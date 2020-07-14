@@ -122,21 +122,7 @@ export default function Home () {
 
       </body>
 
-      <footer className='footer has-background-primary'>
-        <div className="content has-text-centered">
-        <a
-          className='is-link'
-          href='https://www.givecard.io/'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-                        Visit GiveCard
-        </a>
-        <b> OR </b>
-        <Link to='/contact'>Contact Us</Link>
 
-        </div>
-      </footer>
 
     </div>
   )

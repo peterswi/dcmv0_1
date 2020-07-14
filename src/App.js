@@ -29,6 +29,7 @@ import ProfileUpdate from './components/profileUpdate'
 
 // import BasicNavBar from './components/basicNavBar'
 import NavBar from './components/navbar'
+import Footer from './components/footer'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import CircularProgress from '@material-ui/core/CircularProgress'
 // import { CssBaseline } from '@material-ui/core' USE OR NO?
@@ -120,6 +121,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>
+        <Footer/>
       </div>
     )
   }

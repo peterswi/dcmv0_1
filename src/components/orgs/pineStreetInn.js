@@ -63,13 +63,14 @@ class PineStreet extends Component {
 
 
     return (
-      <div className='heading'>
-        <header className='App-header'>
+      <div>
+        <header className='heading has-text-centered'>
           <h2 className="title"><b> The Pine Street Inn</b></h2>
         </header>
+
         <body className="section">
         <div className="textarea"> 
-          <h3>This is the content for the Pine Street Inn's Page </h3>
+          This is the content for the Pine Street Inn's Page
         </div>
         {this.state.admin
           ?(
@@ -85,14 +86,9 @@ class PineStreet extends Component {
           )
           : null
         }
-          <div className="buttons">
-            <button className="button is-small is-warning" >Bulma Button</button>
-            <button className="button is-normal is-danger" >Bulma Button</button>
-            <button className="button is-large is-selected is-link" >Bulma Button</button>
-          </div>
-
 
         </body>
+
       </div>
     )
 
