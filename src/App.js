@@ -101,8 +101,8 @@ class App extends Component {
       <div>
 
         <MuiThemeProvider theme={theme}>
-          <BasicNavBar authenticated={this.state.authenticated} />
-          <NavBar/>
+          {/*<BasicNavBar authenticated={this.state.authenticated} />*/}
+          <NavBar authenticated={this.state.authenticated}/>
           <Switch>
             <Route exact path='/' render={Home} />
             <Route exact path='/login' component={Login} />

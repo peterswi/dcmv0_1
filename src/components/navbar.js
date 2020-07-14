@@ -23,50 +23,69 @@ class NavBar extends Component{
             <span aria-hidden="true"></span>
           </a>
         </div>
-
         <div id="navbarBasicExample" className="navbar-menu">
-          <div className="navbar-start">
-            <a className="navbar-item" href='/'>
-              Home
-            </a>
-
-            <a className="navbar-item" href='/resources'>
-              Resources
-            </a>
-
-            <div className="navbar-item has-dropdown is-hoverable">
-              <a className="navbar-link">
-                More
-              </a>
-
-              <div className="navbar-dropdown">
-                <a className="navbar-item">
-                  About
+        {
+          this.props.authenticated
+          ?(
+            <div className="navbar-start">
+                <a className="navbar-item" href='/'>
+                  Home
                 </a>
-                <a className="navbar-item">
-                  Jobs
+
+                <a className="navbar-item" href='/resources'>
+                  Resources
                 </a>
-                <a className="navbar-item">
-                  Contact
+                <a className="navbar-item" href='/orgPage'>
+                  Organizations
                 </a>
-                <hr className="navbar-divider"/>
-                  <a className="navbar-item">
-                    Report an issue
+
+                <div className="navbar-item has-dropdown is-hoverable">
+                  <a className="navbar-link">
+                    More
                   </a>
-              </div>
-            </div>
-          </div>
 
+                  <div className="navbar-dropdown">
+                    <a className="navbar-item">
+                      About
+                    </a>
+                    <a className="navbar-item" href="/contact">
+                      Contact GiveCard
+                    </a>
+                    <hr className="navbar-divider"/>
+                    <a className="navbar-item">
+                      Report an issue
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+            )
+            : null
+        }
           <div className="navbar-end">
             <div className="navbar-item">
-              <div className="buttons">
-                <a className="button is-primary">
-                  <strong>Sign up</strong>
-                </a>
-                <a className="button is-light">
-                  Log in
-                </a>
-              </div>
+              {
+                this.props.authenticated
+                ?(
+                    <div className="buttons">
+                      <a className="button is-primary" href="/profile">
+                        <strong>Profile</strong>
+                      </a>
+                      <a className="button" href="/logout">
+                        Log Out
+                      </a>
+
+                    </div>
+                  )
+                  :(
+                    <div className="buttons">
+                      <a className="button is-primary" href="/login">
+                        <strong>Log In</strong>
+                      </a>
+                    </div>
+                  )
+              }
+
             </div>
           </div>
         </div>
