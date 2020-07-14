@@ -112,71 +112,82 @@ class OrgUser extends Component {
   render() {
     return (
         <form onSubmit={this.addUser}>
-          <div className="field">
-            <label className="label">First Name</label>
-            <div className="control">
-              <input className="input"
-                type="text"
-                name="firstname"
-                placeholder="Eg, Bill"
-                onChange={this.updateInput}
-                value={this.state.firstname}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Last Name</label>
-            <div className="control">
-              <input className="input"
-                type="text"
-                name="lastname"
-                placeholder="Eg, Peterson"
-                onChange={this.updateInput}
-                value={this.state.lastname}
-              />
-            </div>
-          </div>
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control">
-              <input className="input"
-                key='email'
-                type="email"
-                name="email"
-                placeholder="Eg, give-fam@givecard.io"
-                onChange={this.updateInput}
-                value={this.state.email}
-              />
-            </div>
-          </div>
-
-          <div className="field">
-            <label className="label">Phone Number</label>
-            <div className="control">
-              <input className="label"
-                type="number"
-                name="phone"
-                placeholder="Eg, 617 8866 8490"
-                onChange={this.updateInput}
-                value={this.state.phone}
-              />
-            </div>
-          </div>
-
-            <div className="control">
-              <label className="checkbox">
-                <input
+          <div className="columns">
+            <div className="column">
+              <div className="field">
+                <label className="label">First Name</label>
+                <div className="control">
+                  <input className="input"
+                         type="text"
+                         name="firstname"
+                         placeholder="Eg, Bill"
+                         onChange={this.updateInput}
+                         value={this.state.firstname}
+                  />
+                </div>
+              </div>
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control">
+                  <input className="input"
+                         key='email'
+                         type="email"
+                         name="email"
+                         placeholder="Eg, give-fam@givecard.io"
+                         onChange={this.updateInput}
+                         value={this.state.email}
+                  />
+                </div>
+              </div>
+              <div className="control">
+                <label className="checkbox">
+                  <input
                     type="checkbox"
                     name="isAdmin"
                     onChange={this.onDeclareAdmin}
                     value={this.state.isAdmin}
-                    />
-                      Administrator
-              </label>
+                  />
+                  Administrator
+                </label>
+              </div>
+              <div className="control">
+                <button className="button is-primary" type="submit">Submit</button>
+              </div>
+
             </div>
+            <div className="column">
+
+              <div className="field">
+                <label className="label">Last Name</label>
                 <div className="control">
-                  <button className="button is-primary" type="submit">Submit</button>
+                  <input className="input"
+                         type="text"
+                         name="lastname"
+                         placeholder="Eg, Peterson"
+                         onChange={this.updateInput}
+                         value={this.state.lastname}
+                  />
                 </div>
+              </div>
+
+              <div className="field">
+                <label className="label">Phone Number</label>
+                <div className="control">
+                  <input className="label"
+                         type="tel"
+                         name="phone"
+                         placeholder="Eg, 617 8866 8490"
+                         onChange={this.updateInput}
+                         value={this.state.phone}
+                  />
+                </div>
+              </div>
+
+
+            </div>
+
+            </div>
+
 
         </form>
         );

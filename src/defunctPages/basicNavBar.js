@@ -7,16 +7,16 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import NavDrawer from "./navDrawer";
+import NavDrawer from "../components/navDrawer";
 import Grid from "@material-ui/core/Grid";
 import SearchIcon from '@material-ui/icons/Search'
 import InputBase from '@material-ui/core/InputBase'
-import { useStyles } from './classes'
+import { useStyles } from '../components/classes'
 import { Link } from 'react-router-dom'
 
 //I dont think UseStyles is working currently
 import 'bulma/css/bulma.css'
-import './sass/mystyles.scss'
+import '../components/sass/mystyles.scss'
 
 class BasicNavBar extends React.Component {
 
