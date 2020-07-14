@@ -1,65 +1,119 @@
 import React from 'react'
 import logo from './logo.png'
 import './App.css'
-import { makeStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardContent from '@material-ui/core/CardContent'
-import Typography from '@material-ui/core/Typography'
-import CardActions from '@material-ui/core/CardActions'
-import Button from '@material-ui/core/Button'
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    float: 'left',
-    margin: 'auto'
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)'
-  },
-  title: {
-    fontSize: 14
-  },
-  pos: {
-    marginBottom: 12
-  },
-  center: {
-    margin: 'auto',
-    width: '50%',
-    padding: '10px'
-  }
-})
+import 'bulma/css/bulma.css'
+import './sass/mystyles.scss'
 
 export default function OrgPage () {
-  const classes = useStyles()
+
   return (
-    <div className='App'>
-      <img src={logo} alt='logo' />
-      <header className='App-header'>
-        <h1>
+    <div>
+      <header className='has-background-primary'>
+        <h1 className="title">
             Organization Page
         </h1>
       </header>
+      <body>
+        <section className="textarea has-text-centered">
 
-      <body className={classes.center}>
-        <h3>
-          Visit an Organization Page
-        </h3>
-        <Card className={classes.root} raised>
-          <CardContent>
-            <Typography className={classes.title} color='textSecondary' gutterBottom>
-              Pine Street Inn
-            </Typography>
-            <Typography variant='h5' component='h2'>
-              Visit the Pine Street Inn's Page
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.center}>
-            <Button variant='contained' href='/pineStreet'> Learn More </Button>
-          </CardActions>
-        </Card>
+          Here you are, in the organization landing page.
+
+        </section>
+        <section className="section">
+          <div className="columns">
+            <div className="column">
+              <div className="card">
+                <header className="card-header">
+                  <p className="card-header-title is-centered">
+                    Pine Street Inn
+                  </p>
+                </header>
+                <div className="card-content">
+                  <div className="content">
+                    View the Pine Street Inn's Page
+                  </div>
+                </div>
+                <footer className="card-footer">
+                  <a className="card-footer-item" href='/pineStreet'> Learn More </a>
+                </footer>
+
+              </div>
+            </div>
+            <div className="column">
+              <div className="card">
+                <header className="card-header">
+                  <p className="card-header-title is-centered">
+                    Pine Street Inn
+                  </p>
+                </header>
+                <div className="card-content">
+                  <div className="content">
+                    View the Pine Street Inn's Page
+                  </div>
+                </div>
+                <footer className="card-footer">
+                  <a className="card-footer-item" href='/pineStreet'> Learn More </a>
+                </footer>
+
+              </div>
+            </div>
+            <div className="column">
+              <div className="card">
+                <header className="card-header">
+                  <p className="card-header-title is-centered">
+                    Add
+                  </p>
+                </header>
+                <div className="card-content">
+                  <div className="content">
+                    View the Pine Street Inn's Page
+                  </div>
+                </div>
+                <footer className="card-footer">
+                  <a className="card-footer-item" href='/pineStreet'> Learn More </a>
+                </footer>
+
+              </div>
+            </div>
+            <div className="column">
+              <div className="card">
+                <header className="card-header">
+                  <p className="card-header-title is-centered">
+                    More
+                  </p>
+                </header>
+                <div className="card-content">
+                  <div className="content">
+                    View the Pine Street Inn's Page
+                  </div>
+                </div>
+                <footer className="card-footer">
+                  <a className="card-footer-item" href='/pineStreet'> Learn More </a>
+                </footer>
+
+              </div>
+            </div>
+            <div className="column">
+              <div className="card">
+                <header className="card-header">
+                  <p className="card-header-title is-centered">
+                    Orgs
+                  </p>
+                </header>
+                <div className="card-content">
+                  <div className="content">
+                    View the Pine Street Inn's Page
+                  </div>
+                </div>
+                <footer className="card-footer">
+                  <a className="card-footer-item" href='/pineStreet'> Learn More </a>
+                </footer>
+
+              </div>
+            </div>
+
+          </div>
+        </section>
       </body>
 
     </div>

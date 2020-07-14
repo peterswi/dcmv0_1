@@ -9,7 +9,7 @@ class NavBar extends Component{
 
   render () {
     return(
-      <nav className="navbar" role="navigation" aria-label="main navigation">
+      <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="https://givecard.io">
             <img src={logo} width="112" height="28"/>
@@ -57,6 +57,18 @@ class NavBar extends Component{
                     </a>
                   </div>
                 </div>
+              <div className="navbar-item">
+                <div className="field has-addons">
+                  <p className="control">
+                    <input className="input" type="text" placeholder="Get Help ..."/>
+                  </p>
+                  <p className="control">
+                    <button className="button">
+                      Search
+                    </button>
+                  </p>
+                </div>
+              </div>
               </div>
 
             )
@@ -68,10 +80,10 @@ class NavBar extends Component{
                 this.props.authenticated
                 ?(
                     <div className="buttons">
-                      <a className="button is-primary" href="/profile">
+                      <a className="button is-primary " href="/profile">
                         <strong>Profile</strong>
                       </a>
-                      <a className="button" href="/logout">
+                      <a className="button is-primary" href="/logout">
                         Log Out
                       </a>
 
@@ -79,7 +91,7 @@ class NavBar extends Component{
                   )
                   :(
                     <div className="buttons">
-                      <a className="button is-primary" href="/login">
+                      <a className="button" href="/login">
                         <strong>Log In</strong>
                       </a>
                     </div>

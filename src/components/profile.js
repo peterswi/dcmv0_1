@@ -3,6 +3,8 @@ import './App.css'
 import { app } from '../firestore'
 import Button from '@material-ui/core/Button'
 import { Link } from 'react-router-dom'
+import 'bulma/css/bulma.css'
+import './sass/mystyles.scss'
 
 export default function Profile () {
   const user = app.auth().currentUser
@@ -14,19 +16,24 @@ export default function Profile () {
 
   return (
 
-    <div className='App'>
-      <header className='App-header'>
-        <h1><b>Profile</b></h1>
+    <div >
+      <header className="heading">
+        <h1 className="title"><b>Profile</b></h1>
       </header>
-      <body className='App-page'>
-        <h3><u>User Profile Information:</u></h3>
-        <br /> <b>Name: </b>{name}
-        <br /> <b>Email: </b>{email}
-        <br /> <b>Phone Number: </b>{phone}
-        <br /> <b>User ID: </b>{uid}
-        <br /> <b>Photo URL: </b>{photo}
-        <br /><br /><br />
-        <Button variant='contained' color='inherit' component={Link} to='/profileUpdate'>Update Profile Info</Button>
+      <body>
+        <section className="textarea has-text-centered">
+          This is an explanation of the profile info page.
+        </section>
+        <section className="container">
+          <h3><u>User Profile Information:</u></h3>
+          <br /> <b>Name: </b>{name}
+          <br /> <b>Email: </b>{email}
+          <br /> <b>Phone Number: </b>{phone}
+          <br /> <b>User ID: </b>{uid}
+          <br /> <b>Photo URL: </b>{photo}
+          <br /><br /><br />
+          <a className="button is-primary" href='/profileUpdate'>Update Profile Info</a>
+        </section>
       </body>
       <footer />
     </div>

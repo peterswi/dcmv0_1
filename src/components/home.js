@@ -34,11 +34,11 @@ export default function Home () {
 
       <body>
       <section className="section">
-        <div className="textarea">
+        <div className="container">
           <h2 className="title"><b> Click a link to visit our different pages</b></h2>
           <div className="columns">
             <div className="column">
-              <a className="button is-hoverable is-info" href='/orgPage'> Visit an Organization Page</a>
+              <a className="button is-hoverable is-primary" href='/orgPage'> Visit an Organization Page</a>
             </div>
             <div className="column">
               <a className='button is-hoverable is-primary'  href='/resources'> View All Resources</a></div>
@@ -122,7 +122,7 @@ export default function Home () {
 
       </body>
 
-      <footer className='footer has-background-success'>
+      <footer className='footer has-background-primary'>
         <div className="content has-text-centered">
         <a
           className='is-link'

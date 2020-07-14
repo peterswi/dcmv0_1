@@ -27,7 +27,7 @@ import ProfileUpdate from './components/profileUpdate'
 // import Navigation from './components/navigation'
 // import PrimarySearchAppBar from './components/PrimarySearchAppBar'
 
-import BasicNavBar from './components/basicNavBar'
+// import BasicNavBar from './components/basicNavBar'
 import NavBar from './components/navbar'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import CircularProgress from '@material-ui/core/CircularProgress'
