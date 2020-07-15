@@ -8,14 +8,14 @@ const nodemailer = require('nodemailer')
 //  response.send("Hello from Firebase!");
 // });
 admin.initializeApp()
-// google account credentials
+// google account credentials for dummy email
 var transporter = nodemailer.createTransport({
   host: 'smtp.gmail.com',
   port: 465,
   secure: true,
   auth: {
-    user: 'will.givecard@gmail.com',
-    pass: 'W615Peters!'
+    user: process.env.REACT_APP_EMAIL_USER ,
+    pass: process.env.REACT_APP_EMAIL_PASS
   }
 
 })

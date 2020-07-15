@@ -58,7 +58,7 @@ const homeAuth =(props) =>{
   )
 }
 */
-
+console.log(process.env.REACT_APP_apiKey)
 class App extends Component {
   constructor (props) {
     super(props)
