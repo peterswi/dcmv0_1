@@ -10,7 +10,7 @@ const loginStyles = {
   borderRadius: '5px',
   padding: '10px'
 }
-console.log(process.env.REACT_APP_apiKey)
+
 class Login extends Component {
   constructor (props) {
     super(props)

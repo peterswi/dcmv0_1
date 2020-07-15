@@ -1,7 +1,7 @@
 import * as firebase from 'firebase'
 // import firebaseConfig from './firebaseConfig'
 import Rebase from 're-base'
-console.log(process.env.REACT_APP_apiKey)
+
 require('firebase/firestore')
 // initialize firebase
 var firebaseConfig = {
