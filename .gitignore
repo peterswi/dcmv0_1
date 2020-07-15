@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+/OrgInit
+
 
 # api keys
 .env
