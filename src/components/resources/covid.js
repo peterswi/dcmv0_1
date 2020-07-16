@@ -1,11 +1,12 @@
 import React from 'react'
-import '../App.css'
+import 'bulma/css/bulma.css'
+import '../sass/mystyles.scss'
 
 export default function Covid () {
   return (
-    <div className='App'>
-      <header>
-        Covid-19 Resources
+    <div className="section">
+      <header className='heading'>
+        <h2 className="title">Covid-19 Resources</h2>
       </header>
       <body />
       <footer />
