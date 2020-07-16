@@ -17,9 +17,6 @@ class OrgPage extends Component {
     return (
       <div>
 
-        <Route exact path={this.props.match.path} />
-        <Route path={`${this.props.match.path}/pinestreet`} component={PineStreet} />
-
         <header className='has-background-primary'>
           <h1 className="title">
             Organization Page

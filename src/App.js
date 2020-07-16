@@ -14,6 +14,7 @@ import Login from './components/login'
 import Logout from './components/logout'
 // import RegisterUser from './defunctPages/registerUser'
 import OrgPage from './components/orgPage'
+import Org from './components/org'
 import PineStreet from './components/orgs/pineStreetInn'
 import contact from './components/contact'
 import About from './components/about'
@@ -25,6 +26,7 @@ import Housing from './components/resources/housing'
 import Covid from './components/resources/covid'
 import Food from './components/resources/food'
 import Profile from './components/profile'
+import Prof from './components/prof'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
@@ -105,10 +107,10 @@ class App extends Component {
             <Route exact path='/' render={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
-            <Route path='/profile' component={Profile} />
+            <Route path='/profile' component={Prof} />
             <Route path='/about' component={About}/>
             <Route path='/contact' component={contact} />
-            <Route path='/organizations' component={OrgPage} />
+            <Route path='/organizations' component={Org} />
             <Route path='/resources' component={Resource} />
             <Route component={Error} />
           </Switch>

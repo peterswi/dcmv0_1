@@ -24,10 +24,6 @@ class Profile extends Component {
 
       <div >
 
-        <Route exact path={this.props.match.path} />
-        <Route path={`${this.props.match.path}/update`} component={ProfileUpdate} />
-
-
         <header className="heading">
           <h1 className="title"><b>Profile</b></h1>
         </header>
