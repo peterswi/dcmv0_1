@@ -24,11 +24,6 @@ import Housing from './components/resources/housing'
 import Covid from './components/resources/covid'
 import Food from './components/resources/food'
 import Profile from './components/profile'
-import ProfileUpdate from './components/profileUpdate'
-// import Navigation from './components/navigation'
-// import PrimarySearchAppBar from './components/PrimarySearchAppBar'
-
-// import BasicNavBar from './components/basicNavBar'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
@@ -111,7 +106,7 @@ class App extends Component {
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
             <Route path='/profile' component={Profile} />
-            <Route path='/profileUpdate' component={ProfileUpdate} />
+
 
             <Route path='/about' component={About}/>
             <Route path='/contact' component={contact} />

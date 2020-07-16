@@ -1,25 +1,37 @@
-import React from 'react'
+import React, { Component } from 'react'
 import './App.css'
 import { app } from '../firestore'
+import { Route } from 'react-router-dom'
+import ProfileUpdate from './profileUpdate'
 
 import 'bulma/css/bulma.css'
 import './sass/mystyles.scss'
 
-export default function Profile () {
-  const user = app.auth().currentUser
-  const email = user.email
-  const name = user.displayName
-  const photo = user.photoURL
-  const phone = user.phoneNumber
-  const uid = user.uid
+class Profile extends Component {
+  constructor (props) {
+    super(props);
+  }
 
-  return (
+  render () {
+    const user = app.auth().currentUser
+    const email = user.email
+    const name = user.displayName
+    const photo = user.photoURL
+    const phone = user.phoneNumber
+    const uid = user.uid
 
-    <div >
-      <header className="heading">
-        <h1 className="title"><b>Profile</b></h1>
-      </header>
-      <body>
+    return (
+
+      <div >
+
+        <Route exact path={this.props.match.path} />
+        <Route path={`${this.props.match.path}/update`} component={ProfileUpdate} />
+
+
+        <header className="heading">
+          <h1 className="title"><b>Profile</b></h1>
+        </header>
+        <body>
         <section className="textarea has-text-centered">
           This is an explanation of the profile info page.
         </section>
@@ -31,10 +43,13 @@ export default function Profile () {
           <br /> <b>User ID: </b>{uid}
           <br /> <b>Photo URL: </b>{photo}
           <br /><br />
-          <a className="button is-primary" href='/profileUpdate'>Update Profile Info</a>
+          <a className="button is-primary" href='/profile/update'>Update Profile Info</a>
         </section>
         <br /><br />
-      </body>
-    </div>
-  )
-};
+        </body>
+      </div>
+    )
+  }
+}
+
+export default Profile

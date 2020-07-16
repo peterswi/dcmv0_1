@@ -45,7 +45,7 @@ class NavBar extends Component{
                   </a>
 
                   <div className="navbar-dropdown">
-                    <a className="navbar-item">
+                    <a className="navbar-item" href="/about">
                       About
                     </a>
                     <a className="navbar-item" href="/contact">
