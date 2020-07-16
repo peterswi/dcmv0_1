@@ -111,7 +111,7 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/contact' component={contact} />
 
-            <Route path='/orgPage' component={OrgPage} />
+            <Route path='/organizations' component={OrgPage} />
             <Route path='/pineStreet' component={PineStreet} />
 
             <Route path='/resources' component={resources} />
