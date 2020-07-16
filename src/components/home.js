@@ -38,7 +38,7 @@ export default function Home () {
           <h2 className="title"><b> Click a link to visit our different pages</b></h2>
           <div className="columns">
             <div className="column">
-              <a className="button is-hoverable is-primary" href='/orgPage'> Visit an Organization Page</a>
+              <a className="button is-hoverable is-primary" href='/organizations'> Visit an Organization Page</a>
             </div>
             <div className="column">
               <a className='button is-hoverable is-primary'  href='/resources'> View All Resources</a></div>

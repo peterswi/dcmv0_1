@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import logo from './logo.png'
 
 import 'bulma/css/bulma.css'
-import '../sass/mystyles.scss'
+import './sass/mystyles.scss'
 
 class About extends Component{
 

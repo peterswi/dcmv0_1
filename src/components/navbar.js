@@ -35,7 +35,7 @@ class NavBar extends Component{
                 <a className="navbar-item" href='/resources'>
                   Resources
                 </a>
-                <a className="navbar-item" href='/orgPage'>
+                <a className="navbar-item" href='/organizations'>
                   Organizations
                 </a>
 
