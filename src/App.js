@@ -16,6 +16,7 @@ import Logout from './components/logout'
 import OrgPage from './components/orgPage'
 import PineStreet from './components/orgs/pineStreetInn'
 import contact from './components/contact'
+import About from './components/about'
 import Error from './components/error'
 import resources from './components/resources'
 import Job from './components/resources/job'
@@ -106,18 +107,25 @@ class App extends Component {
           <NavBar authenticated={this.state.authenticated}/>
           <Switch>
             <Route exact path='/' render={Home} />
+
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
+            <Route path='/profile' component={Profile} />
+            <Route path='/profileUpdate' component={ProfileUpdate} />
+
+            <Route path='/about' component={About}/>
             <Route path='/contact' component={contact} />
+
             <Route path='/orgPage' component={OrgPage} />
             <Route path='/pineStreet' component={PineStreet} />
+
             <Route path='/resources' component={resources} />
             <Route path='/food' component={Food} />
             <Route path='/job' component={Job} />
             <Route path='/housing' component={Housing} />
             <Route path='/covid' component={Covid} />
-            <Route path='/profile' component={Profile} />
-            <Route path='/profileUpdate' component={ProfileUpdate} />
+
+
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>
