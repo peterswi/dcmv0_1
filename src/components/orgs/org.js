@@ -1,12 +1,11 @@
 import React, {Component} from 'react'
 import {Route} from 'react-router-dom'
 
-import PS from './orgs/PineStreet/PS'
+import PS from './PineStreet/PS'
 import OrgPage from './orgPage'
-import CM from './orgs/CityMission/CM'
+import CM from './CityMission/CM'
 
 class Org extends Component{
-  constructor (props) {super(props);}
 
   render () {
 

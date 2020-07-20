@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import 'bulma/css/bulma.css'
 import '../../sass/mystyles.scss'
 
-import OrgUser from '../../orgUser'
+import OrgUser from '../orgUser'
 import {app, db} from '../../../firestore'
 
 

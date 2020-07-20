@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 //import { app, db } from "../firestore";
 import * as firebase from 'firebase';
 import 'bulma/css/bulma.css'
-import './sass/mystyles.scss'
+import '../sass/mystyles.scss'
 // import { makeStyles } from '@material-ui/core/styles';
 // import InputLabel from '@material-ui/core/InputLabel';
 // import MenuItem from '@material-ui/core/MenuItem';

@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import home from './components/home'
 import RegisterUser from './defunctPages/registerUser'
-import orgPage from './components/orgPage'
+import orgPage from './components/orgs/orgPage'
 import contact from './components/contact'
 import Error from './components/error'
 // import Navigation from './components/navigation'

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../../App.css'
 // import { makeStyles } from '@material-ui/core/styles'
-import OrgUser from '../../orgUser'
+import OrgUser from '../orgUser'
 import {app, db} from '../../../firestore'
 
 // a little bit of bulma

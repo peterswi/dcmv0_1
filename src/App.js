@@ -12,26 +12,20 @@ import { app } from './firestore'
 import Home from './components/home'
 import Login from './components/login'
 import Logout from './components/logout'
-// import RegisterUser from './defunctPages/registerUser'
-import OrgPage from './components/orgPage'
-import Org from './components/org'
-import PineStreet from './components/orgs/PineStreet/pineStreetInn'
+
+import Org from './components/orgs/org'
+
 import contact from './components/contact'
 import About from './components/about'
 import Error from './components/error'
 import Resource from './components/resource'
-import resources from './components/resources'
-import Job from './components/resources/job'
-import Housing from './components/resources/housing'
-import Covid from './components/resources/covid'
-import Food from './components/resources/food'
-import Profile from './components/profile'
+
 import Prof from './components/prof'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 import CircularProgress from '@material-ui/core/CircularProgress'
-// import { CssBaseline } from '@material-ui/core' USE OR NO?
+
 
 const theme = createMuiTheme({
   palette: {

@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
-import PineStreet from './orgs/PineStreet/pineStreetInn'
 
-import './App.css'
 import 'bulma/css/bulma.css'
-import './sass/mystyles.scss'
-import ProfileUpdate from './profileUpdate'
+import '../sass/mystyles.scss'
+
 
 class OrgPage extends Component {
   constructor (props) {
@@ -17,13 +14,13 @@ class OrgPage extends Component {
     return (
       <div>
 
-        <header className='has-background-primary'>
-          <h1 className="title">
-            Organization Page
-          </h1>
+        <header className='has-text-centered'>
+          <h2 className="title">
+            <b>Organization Page</b>
+          </h2>
         </header>
         <body>
-        <section className="textarea has-text-centered">
+        <section className="section has-text-centered">
 
           Here you are, in the organization landing page.
 
