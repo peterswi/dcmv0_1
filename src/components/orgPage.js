@@ -52,16 +52,16 @@ class OrgPage extends Component {
               <div className="card">
                 <header className="card-header">
                   <p className="card-header-title is-centered">
-                    Pine Street Inn
+                    City Mission Boston
                   </p>
                 </header>
                 <div className="card-content">
                   <div className="content">
-                    View the Pine Street Inn's Page
+                    View City Mission's Page
                   </div>
                 </div>
                 <footer className="card-footer">
-                  <a className="card-footer-item" href='/pineStreet'> Learn More </a>
+                  <a className="card-footer-item" href='/organizations/citymission'> Learn More </a>
                 </footer>
 
               </div>
@@ -75,7 +75,7 @@ class OrgPage extends Component {
                 </header>
                 <div className="card-content">
                   <div className="content">
-                    View the Pine Street Inn's Page
+                    [fill in orgs]
                   </div>
                 </div>
                 <footer className="card-footer">
@@ -93,7 +93,7 @@ class OrgPage extends Component {
                 </header>
                 <div className="card-content">
                   <div className="content">
-                    View the Pine Street Inn's Page
+                    [fill in orgs]
                   </div>
                 </div>
                 <footer className="card-footer">
@@ -111,7 +111,7 @@ class OrgPage extends Component {
                 </header>
                 <div className="card-content">
                   <div className="content">
-                    View the Pine Street Inn's Page
+                    [fill in orgs]
                   </div>
                 </div>
                 <footer className="card-footer">
