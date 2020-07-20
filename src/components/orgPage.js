@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
-import PineStreet from './orgs/pineStreetInn'
+import PineStreet from './orgs/PineStreet/pineStreetInn'
 
 import './App.css'
 import 'bulma/css/bulma.css'

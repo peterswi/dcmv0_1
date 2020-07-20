@@ -14,7 +14,6 @@ class CityMission extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      orgId: 'CityMission',
       admin: false
     }
   }
@@ -58,20 +57,7 @@ class CityMission extends Component {
         <div className="textarea">
           Here is the content for the page
         </div>
-        {this.state.admin
-          ?(
-            <div className="section has-text-centered">
-              <div className="is-black">
-                Admin: Add User Here
-              </div>
-              <div>
-                <OrgUser orgId={this.state.orgId}/>
-              </div>
 
-            </div>
-          )
-          : null
-        }
 
         </body>
 
