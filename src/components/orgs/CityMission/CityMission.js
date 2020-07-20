@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import '../App.css'
+// import '../../App.css'
 // import { makeStyles } from '@material-ui/core/styles'
-import OrgUser from '../orgUser'
-import {app, db} from '../../firestore'
+import OrgUser from '../../orgUser'
+import {app, db} from '../../../firestore'
 
 // a little bit of bulma
 import 'bulma/css/bulma.css'
-import '../sass/mystyles.scss'
+import '../../sass/mystyles.scss'
 
 
 
@@ -41,12 +41,22 @@ class CityMission extends Component {
     return (
       <div>
         <header className='heading has-text-centered'>
-          <h2 className="title"><b> City Mission Boston</b></h2>
+          <h2 className="title"><b> City Mission Boston</b>
+          {this.state.admin
+          ?(<a className="button is-pulled-right" href='/organizations/citymission/admin'> Admin </a>)
+            :null
+          }
+          </h2>
+
         </header>
 
         <body className="section">
+        <div className="container">
+          <h2 className="subtitle">Welcome to City Mission's Page.</h2>
+          <br/>
+        </div>
         <div className="textarea">
-          Welcome to City Mission's Page.
+          Here is the content for the page
         </div>
         {this.state.admin
           ?(
