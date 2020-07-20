@@ -18,7 +18,7 @@ import Org from './components/orgs/org'
 import contact from './components/contact'
 import About from './components/about'
 import Error from './components/error'
-import Resource from './components/resource'
+import Resource from './components/resources/resource'
 
 import Prof from './components/profile/prof'
 import NavBar from './components/navbar'

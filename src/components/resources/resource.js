@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 import {Route} from 'react-router-dom'
 
 import Resources from './resources'
-import Covid from './resources/covid'
-import Food from './resources/food'
-import Housing from './resources/housing'
-import Job from './resources/job'
+import Covid from './covid'
+import Food from './food'
+import Housing from './housing'
+import Job from './job'
 
 class Resource extends Component{
   constructor (props) {

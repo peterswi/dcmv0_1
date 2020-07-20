@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import './App.css'
+import '../App.css'
 
 import 'bulma/css/bulma.css'
-import './sass/mystyles.scss'
+import './../sass/mystyles.scss'
 
 /*
 import { Link, Route } from 'react-router-dom'
