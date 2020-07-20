@@ -11,7 +11,7 @@ import NavDrawer from "./navDrawer";
 import Grid from "@material-ui/core/Grid";
 import SearchIcon from '@material-ui/icons/Search'
 import InputBase from '@material-ui/core/InputBase'
-import { useStyles } from '../components/classes'
+import { useStyles } from './classes'
 import { Link } from 'react-router-dom'
 
 //I dont think UseStyles is working currently
