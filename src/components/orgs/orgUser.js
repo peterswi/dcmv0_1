@@ -126,36 +126,6 @@ class OrgUser extends Component {
                   />
                 </div>
               </div>
-              <div className="field">
-                <label className="label">Email</label>
-                <div className="control">
-                  <input className="input"
-                         key='email'
-                         type="email"
-                         name="email"
-                         placeholder="Eg, give-fam@givecard.io"
-                         onChange={this.updateInput}
-                         value={this.state.email}
-                  />
-                </div>
-              </div>
-              <div className="control">
-                <label className="checkbox">
-                  <input
-                    type="checkbox"
-                    name="isAdmin"
-                    onChange={this.onDeclareAdmin}
-                    value={this.state.isAdmin}
-                  />
-                  Administrator
-                </label>
-              </div>
-              <div className="control">
-                <button className="button is-primary" type="submit">Submit</button>
-              </div>
-
-            </div>
-            <div className="column">
 
               <div className="field">
                 <label className="label">Last Name</label>
@@ -166,6 +136,20 @@ class OrgUser extends Component {
                          placeholder="Eg, Peterson"
                          onChange={this.updateInput}
                          value={this.state.lastname}
+                  />
+                </div>
+              </div>
+
+              <div className="field">
+                <label className="label">Email</label>
+                <div className="control">
+                  <input className="input"
+                         key='email'
+                         type="email"
+                         name="email"
+                         placeholder="Eg, give-fam@givecard.io"
+                         onChange={this.updateInput}
+                         value={this.state.email}
                   />
                 </div>
               </div>
@@ -183,8 +167,30 @@ class OrgUser extends Component {
                 </div>
               </div>
 
+              <div className="control">
+                <label className="checkbox">
+                  <input
+                    type="checkbox"
+                    name="isAdmin"
+                    onChange={this.onDeclareAdmin}
+                    value={this.state.isAdmin}
+                  />
+                  Administrator
+                </label>
+              </div>
+              <div className="control">
+                <button className="button is-primary" type="submit">Submit</button>
+              </div>
 
             </div>
+
+
+
+
+
+
+
+
 
             </div>
 
