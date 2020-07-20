@@ -10,8 +10,8 @@ import 'firebase/auth';
 */
 import { app } from './firestore'
 import Home from './components/home'
-import Login from './components/login'
-import Logout from './components/logout'
+import Login from './components/profile/login'
+import Logout from './components/profile/logout'
 
 import Org from './components/orgs/org'
 
@@ -20,7 +20,7 @@ import About from './components/about'
 import Error from './components/error'
 import Resource from './components/resource'
 
-import Prof from './components/prof'
+import Prof from './components/profile/prof'
 import NavBar from './components/navbar'
 import Footer from './components/footer'
 import { ThemeProvider as MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'

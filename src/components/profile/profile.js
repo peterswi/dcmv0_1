@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
-import './App.css'
-import { app } from '../firestore'
-import { Route } from 'react-router-dom'
-import ProfileUpdate from './profileUpdate'
+import '../App.css'
+import { app } from '../../firestore'
+
 
 import 'bulma/css/bulma.css'
-import './sass/mystyles.scss'
+import '../sass/mystyles.scss'
 
 class Profile extends Component {
   constructor (props) {

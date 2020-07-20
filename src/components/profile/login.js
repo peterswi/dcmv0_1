@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
-import { app, facebookProvider } from '../firestore'
+import { app, facebookProvider } from '../../firestore'
 
 const loginStyles = {
   width: '90%',

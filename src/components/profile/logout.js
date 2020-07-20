@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import { app } from '../firestore'
+import { app } from '../../firestore'
 
 class Logout extends Component {
   constructor () {

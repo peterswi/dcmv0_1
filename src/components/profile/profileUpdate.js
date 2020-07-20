@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { app } from '../firestore'
+import { app } from '../../firestore'
 import { Redirect } from 'react-router-dom'
 
 class ProfileUpdate extends Component {
