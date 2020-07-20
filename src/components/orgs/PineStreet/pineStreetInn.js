@@ -1,44 +1,19 @@
 import React, { Component } from 'react'
-import '../App.css'
+import '../../App.css'
 // import { makeStyles } from '@material-ui/core/styles'
-import OrgUser from '../orgUser'
-import {app, db} from '../../firestore'
+import OrgUser from '../../orgUser'
+import {app, db} from '../../../firestore'
 
 // a little bit of bulma
 import 'bulma/css/bulma.css'
-import '../sass/mystyles.scss'
+import '../../sass/mystyles.scss'
 
-/*
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    float: 'left',
-    margin: 'auto'
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)'
-  },
-  title: {
-    fontSize: 14
-  },
-  pos: {
-    marginBottom: 12
-  },
-  center: {
-    margin: 'auto',
-    width: '50%',
-    padding: '10px'
-  }
-})
-*/
+
 
 class PineStreet extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      orgId: 'PineStreetInn',
       admin: false
     }
   }
@@ -65,27 +40,17 @@ class PineStreet extends Component {
     return (
       <div>
         <header className='heading has-text-centered'>
-          <h2 className="title"><b> The Pine Street Inn</b></h2>
+          <h2 className="title"><b> The Pine Street Inn</b>
+            {this.state.admin
+            ?(<a className="button is-pulled-right" href='/organizations/pinestreet/admin'> Admin </a>)
+            :null
+          }</h2>
         </header>
 
         <body className="section">
         <div className="textarea"> 
           This is the content for the Pine Street Inn's Page
         </div>
-        {this.state.admin
-          ?(
-          <div className="section has-text-centered">
-            <div className="is-black">
-              Admin: Add User Here
-            </div>
-             <div>
-               <OrgUser orgId={this.state.orgId}/>
-             </div>
-
-          </div>
-          )
-          : null
-        }
 
         </body>
 
