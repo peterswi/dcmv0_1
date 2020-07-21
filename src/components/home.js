@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from './logo.png'
+import logo from './GIVECARD  logo.png'
 import './App.css'
 import { Link } from 'react-router-dom'
 
@@ -26,7 +26,7 @@ export default function Home () {
     <div className='has-text-centered'>
 
       <header className='heading is-family-secondary'>
-        <img src={logo} className='App-logo' alt='logo' />
+        <img src={logo} width="224" height="100" />
         <h1 className="title"> GiveCard Presents: GiveHelp</h1>
         <h2 className="subtitle"> A tool for Case Management</h2>
         <p />
