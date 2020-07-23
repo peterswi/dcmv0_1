@@ -3,6 +3,7 @@ import 'bulma/css/bulma.css'
 import '../../sass/mystyles.scss'
 
 import OrgUser from '../orgUser'
+import BasicEditor from '../../basicEditor'
 import {app, db} from '../../../firestore'
 
 
@@ -38,6 +39,18 @@ class CityMissionAdmin extends Component{
         <body className="section">
         {this.state.admin
           ?(
+          <div>
+            <div className="section ">
+              <div className="is-black">
+                <h2 className="subtitle">
+                  Admin: add content to your page here.
+                </h2>
+              </div>
+              <div>
+                <BasicEditor/>
+              <br/>
+              </div>
+            </div>
             <div className="section has-text-centered">
               <div className="is-black">
                 <h2 className="subtitle">Admin: Add User Here</h2>
@@ -47,6 +60,7 @@ class CityMissionAdmin extends Component{
               </div>
 
             </div>
+          </div>
           )
           : null
         }
