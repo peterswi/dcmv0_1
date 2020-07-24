@@ -30,6 +30,7 @@
     "slate-react": "^0.58.4"
   },
   "devDependencies": {
+    "emotion": "^10.0.27",
     "standard": "*"
   },
   "scripts": {

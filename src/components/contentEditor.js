@@ -1,10 +1,12 @@
+//initially ripping this off straight from the SlateJs website
+
 import React, { useCallback, useMemo, useState } from 'react'
 import isHotkey from 'is-hotkey'
 import { Editable, withReact, useSlate, Slate } from 'slate-react'
 import { Editor, Transforms, createEditor } from 'slate'
 import { withHistory } from 'slate-history'
 
-import { Button, Icon, Toolbar } from '../components'
+import { Button, Icon, Toolbar } from './slateComponents'
 
 const HOTKEYS = {
   'mod+b': 'bold',
@@ -43,6 +45,7 @@ const ContentEditor = () => {
         placeholder="Enter some rich text…"
         spellCheck
         autoFocus
+        //update hotkey stuff
         onKeyDown={event => {
           for (const hotkey in HOTKEYS) {
             if (isHotkey(hotkey, event)) {
@@ -53,6 +56,8 @@ const ContentEditor = () => {
           }
         }}
       />
+      <br/>
+      <button className="button is-primary"> Save </button>
     </Slate>
   )
 }
@@ -169,39 +174,10 @@ const MarkButton = ({ format, icon }) => {
 }
 
 const initialValue = [
+
   {
     type: 'paragraph',
-    children: [
-      { text: 'This is editable ' },
-      { text: 'rich', bold: true },
-      { text: ' text, ' },
-      { text: 'much', italic: true },
-      { text: ' better than a ' },
-      { text: '<textarea>', code: true },
-      { text: '!' },
-    ],
-  },
-  {
-    type: 'paragraph',
-    children: [
-      {
-        text:
-          "Since it's rich text, you can do things like turn a selection of text ",
-      },
-      { text: 'bold', bold: true },
-      {
-        text:
-          ', or add a semantically rendered block quote in the middle of the page, like this:',
-      },
-    ],
-  },
-  {
-    type: 'block-quote',
-    children: [{ text: 'A wise quote.' }],
-  },
-  {
-    type: 'paragraph',
-    children: [{ text: 'Try it out for yourself!' }],
+    children: [{ text: 'Add your own content here...', italic:true }],
   },
 ]
 
