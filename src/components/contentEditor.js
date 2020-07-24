@@ -8,6 +8,10 @@ import { withHistory } from 'slate-history'
 
 import { Button, Icon, Toolbar } from './slateComponents'
 
+import { FormatBold, FormatItalic, FormatUnderlined, Code, FormatListNumbered, FormatQuote, FormatListBulleted, Title }  from '@material-ui/icons'
+import 'bulma/css/bulma.css'
+import './sass/mystyles.scss'
+
 const HOTKEYS = {
   'mod+b': 'bold',
   'mod+i': 'italic',
@@ -23,21 +27,21 @@ const ContentEditor = () => {
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
-  //need to import all of the stuff missing to make this work.
-
+  // want to figure out how to outline the textarea
   return (
-    <Slate editor={editor} value={value} onChange={value => setValue(value)}>
+    <div className="section is-outlined">
+    <Slate  editor={editor} value={value} onChange={value => setValue(value)}>
 
       <Toolbar>
-        <MarkButton format="bold" icon="format_bold" />
-        <MarkButton format="italic" icon="format_italic" />
-        <MarkButton format="underline" icon="format_underlined" />
-        <MarkButton format="code" icon="code" />
-        <BlockButton format="heading-one" icon="looks_one" />
-        <BlockButton format="heading-two" icon="looks_two" />
-        <BlockButton format="block-quote" icon="format_quote" />
-        <BlockButton format="numbered-list" icon="format_list_numbered" />
-        <BlockButton format="bulleted-list" icon="format_list_bulleted" />
+        <MarkButton format="bold" icon=<FormatBold/> />
+        <MarkButton format="italic" icon=<FormatItalic/> />
+        <MarkButton format="underline" icon=<FormatUnderlined/> />
+        <MarkButton format="code" icon=<Code/> />
+        <BlockButton format="heading-one" icon=<Title fontSize="large"/> />
+        <BlockButton format="heading-two" icon=<Title fontSize="default"/> />
+        <BlockButton format="block-quote" icon=<FormatQuote/> />
+        <BlockButton format="numbered-list" icon=<FormatListNumbered/> />
+        <BlockButton format="bulleted-list" icon=<FormatListBulleted/> />
       </Toolbar>
       <Editable
         renderElement={renderElement}
@@ -59,6 +63,7 @@ const ContentEditor = () => {
       <br/>
       <button className="button is-primary"> Save </button>
     </Slate>
+    </div>
   )
 }
 
