@@ -21,8 +21,11 @@ const ContentEditor = () => {
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
+  //need to import all of the stuff missing to make this work.
+
   return (
     <Slate editor={editor} value={value} onChange={value => setValue(value)}>
+
       <Toolbar>
         <MarkButton format="bold" icon="format_bold" />
         <MarkButton format="italic" icon="format_italic" />
