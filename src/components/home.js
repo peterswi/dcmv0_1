@@ -61,7 +61,7 @@ export default function Home () {
                 </div>
               </div>
               <footer className="card-footer">
-                <a className="card-footer-item" href='/covid'> Learn More </a>
+                <a className="card-footer-item" href='/resources/covid'> Learn More </a>
               </footer>
             
             </div>
@@ -79,7 +79,7 @@ export default function Home () {
                 </div>
               </div>
               <footer className="card-footer">
-                <a className="card-footer-item" href='/housing'> Learn More </a>
+                <a className="card-footer-item" href='/resources/housing'> Learn More </a>
               </footer>
             </div>
           </div>
@@ -96,7 +96,7 @@ export default function Home () {
                 </div>
               </div>
               <footer className="card-footer">
-                <a className="card-footer-item" href='/food'> Learn More </a>
+                <a className="card-footer-item" href='/resources/food'> Learn More </a>
               </footer>
             </div>
           </div>
@@ -113,7 +113,7 @@ export default function Home () {
                 </div>
               </div>
               <footer className="card-footer">
-                <a className="card-footer-item" href='/job'> Learn More </a>
+                <a className="card-footer-item" href='/resources/job'> Learn More </a>
               </footer>
             </div>
           </div>
