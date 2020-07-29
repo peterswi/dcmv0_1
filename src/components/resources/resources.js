@@ -13,9 +13,12 @@ import Job from './resources/job'
 */
 
 class Resources extends Component {
+  /*
   constructor () {
     super();
   }
+
+   */
 //solution might just be having the landing page be dif than route page?
   render () {
 

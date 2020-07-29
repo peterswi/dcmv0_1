@@ -1,16 +1,5 @@
 import React from 'react'
 import logo from './GIVECARD  logo.png'
-import './App.css'
-import { Link } from 'react-router-dom'
-
-// all of these imports were from MUI, have been replaced by better looking bulma stuff lol
-// import Button from '@material-ui/core/Button' no longer using MUI buttons
-// import Card from '@material-ui/core/Card'
-// import CardActions from '@material-ui/core/CardActions'
-// import CardContent from '@material-ui/core/CardContent'
-// import { makeStyles } from '@material-ui/core/styles'
-// import Typography from '@material-ui/core/Typography'
-// import { useStyles } from './classes'
 
 import 'bulma/css/bulma.css'
 import './sass/mystyles.scss'
@@ -26,7 +15,7 @@ export default function Home () {
     <div className='has-text-centered'>
 
       <header className='heading is-family-secondary'>
-        <img src={logo} width="224" height="100" />
+        <img src={logo} width="224" height="100" alt="App Logo" />
         <h1 className="title"> GiveCard Presents: GiveHelp</h1>
         <h2 className="subtitle"> A tool for Case Management</h2>
         <p />

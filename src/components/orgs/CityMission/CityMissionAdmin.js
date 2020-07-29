@@ -3,7 +3,6 @@ import 'bulma/css/bulma.css'
 import '../../sass/mystyles.scss'
 
 import OrgUser from '../orgUser'
-import BasicEditor from '../../basicEditor'
 import ContentEditor from '../../contentEditor'
 import {app, db} from '../../../firestore'
 
@@ -45,17 +44,6 @@ class CityMissionAdmin extends Component{
               <div className="is-black">
                 <h2 className="subtitle">
                   Admin: add content to your page here.
-                </h2>
-              </div>
-              <div>
-                <BasicEditor/>
-              <br/>
-              </div>
-            </div>
-            <div className="section ">
-              <div className="is-black">
-                <h2 className="subtitle">
-                  Or Here:
                 </h2>
               </div>
               <div className="container">
