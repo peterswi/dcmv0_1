@@ -7,9 +7,13 @@ import 'bulma/css/bulma.css'
 import '../sass/mystyles.scss'
 
 class Profile extends Component {
+  /*
+
   constructor (props) {
     super(props);
   }
+
+   */
 
   render () {
     const user = app.auth().currentUser

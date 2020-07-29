@@ -5,7 +5,11 @@ import CityMission from './CityMission'
 import CityMissionAdmin from './CityMissionAdmin'
 
 class CM extends Component{
+  /*
+
   constructor (props) {super(props);}
+
+   */
 
   render () {
 

@@ -5,9 +5,12 @@ import '../sass/mystyles.scss'
 
 
 class OrgPage extends Component {
+  /*
   constructor (props) {
     super(props);
   }
+
+   */
 
   render () {
 

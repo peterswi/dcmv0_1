@@ -8,9 +8,12 @@ import Housing from './housing'
 import Job from './job'
 
 class Resource extends Component{
+  /*
   constructor (props) {
     super(props);
   }
+  */
+
   render () {
 
     return(

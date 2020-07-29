@@ -11,7 +11,7 @@ class About extends Component{
       <div className="section">
         <header className="heading">
           <a className="navbar-item" href="https://givecard.io">
-            <img src={logo}width="112" height="28"/>
+            <img src={logo}width="112" height="28" alt="Logo"/>
           </a>
           <h2 className="title">
             About GiveHelp

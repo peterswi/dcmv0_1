@@ -12,7 +12,7 @@ class NavBar extends Component{
       <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
           <a className="navbar-item" href="https://givecard.io">
-            <img src={logo} width="112" height="28"/>
+            <img src={logo} width="112" height="28"  alt="Logo"/>
 
           </a>
 

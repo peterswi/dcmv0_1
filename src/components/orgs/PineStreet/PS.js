@@ -5,7 +5,10 @@ import PineStreet from './pineStreetInn'
 import PineStreetAdmin from './PineStreetAdmin'
 
 class CM extends Component{
+  /*
   constructor (props) {super(props);}
+
+   */
 
   render () {
 

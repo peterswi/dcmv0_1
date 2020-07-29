@@ -5,7 +5,10 @@ import ProfileUpdate from './profileUpdate'
 import Profile from './profile'
 
 class Prof extends Component{
+  /*
   constructor (props) {super(props);}
+
+   */
 
   render () {
 
