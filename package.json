@@ -14,6 +14,7 @@
     "babel-preset-es2015-ie": "^6.7.0",
     "bulma": "^0.9.0",
     "bulma-start": "0.0.4",
+    "emotion": "^10.0.27",
     "firebase": "^7.15.5",
     "fontsource-roboto": "^2.1.4",
     "is-hotkey": "^0.1.6",
@@ -30,7 +31,6 @@
     "slate-react": "^0.58.4"
   },
   "devDependencies": {
-    "emotion": "^10.0.27",
     "standard": "*"
   },
   "scripts": {
