@@ -13,16 +13,9 @@ class NavBar extends Component{
         <div className="navbar-brand">
           <a className="navbar-item" href="https://givecard.io">
             <img src={logo} width="112" height="28"  alt="Logo"/>
-
-          </a>
-
-          <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
-             data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
           </a>
         </div>
+
         <div id="navbarBasicExample" className="navbar-menu">
         {
           this.props.authenticated
@@ -52,7 +45,7 @@ class NavBar extends Component{
                       Contact GiveCard
                     </a>
                     <hr className="navbar-divider"/>
-                    <a className="navbar-item">
+                    <a className="navbar-item" href='/issue'>
                       Report an issue
                     </a>
                   </div>

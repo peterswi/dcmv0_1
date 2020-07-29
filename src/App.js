@@ -13,11 +13,12 @@ import Home from './components/home'
 import Login from './components/profile/login'
 import Logout from './components/profile/logout'
 
-import Org from './components/orgs/org'
-
 import contact from './components/contact'
 import About from './components/about'
 import Error from './components/error'
+import IssuePage from './components/issuePage'
+
+import Org from './components/orgs/org'
 import Resource from './components/resources/resource'
 
 import Prof from './components/profile/prof'
@@ -106,6 +107,7 @@ class App extends Component {
             <Route path='/contact' component={contact} />
             <Route path='/organizations' component={Org} />
             <Route path='/resources' component={Resource} />
+            <Route path='/issue' component={IssuePage}/>
             <Route component={Error} />
           </Switch>
         </MuiThemeProvider>
