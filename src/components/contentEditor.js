@@ -25,26 +25,16 @@ const HOTKEYS = {
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 
 const ContentEditor = () => {
+
   const [value, setValue] = useState(JSON.parse(localStorage.getItem('content')) || initialValue)
   const renderElement = useCallback(props => <Element {...props} />, [])
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
-  const org = db.collection("organizations").doc("CityMission")
-  //console.log(this.props.orgId)
-  const arrayU =firebase.firestore.FieldValue.arrayUnion
 
   /*
   //trying to save to DB
-  const dbSave = (value) => {
 
-    let org=db.collection("organizations").doc(this.props.orgId)
-    const arrayU= firebase.firestore.FieldValue.arrayUnion
-    const newContent=JSON.stringify(value)
-    org.update({
-      content: arrayU(newContent)
-    })
-  }
 
    */
 
@@ -58,15 +48,6 @@ const ContentEditor = () => {
         setValue(value)
         const content=JSON.stringify(value)
         localStorage.setItem('content', content)
-      }}
-      onSubmit={value => {
-        const dbContent =JSON.stringify(value)
-        org.update({
-          content: arrayU(dbContent)
-        }).then(r => console.log("sucessfully uploaded"))
-          .catch(function(error){
-            console.error('Error writing doc', error)
-          })
       }}
     >
 
@@ -99,10 +80,33 @@ const ContentEditor = () => {
         }}
       />
       <br/>
-      <button className="button is-primary" type="submit"> Save </button>
+      <button className="button is-primary" type="submit"
+              onClick={value=>{
+                const upload=JSON.stringify(value)
+                dbSave(upload)
+                setValue(initialValue)
+                }}>
+        Save
+      </button>
     </Slate>
     </div>
   )
+}
+
+const dbSave = (value) => {
+
+  let org=db.collection("organizations").doc("CityMission")
+  const arrayU= firebase.firestore.FieldValue.arrayUnion
+
+  org.update({
+    content: arrayU(value)
+  }).then(function(){
+    console.log("successfully uploaded")
+  })
+    .catch(function(error){
+      console.error('Error writing doc', error)
+    })
+
 }
 
 const toggleBlock = (editor, format) => {
