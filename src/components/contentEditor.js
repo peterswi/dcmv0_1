@@ -5,12 +5,15 @@ import isHotkey from 'is-hotkey'
 import { Editable, withReact, useSlate, Slate } from 'slate-react'
 import { Editor, Transforms, createEditor } from 'slate'
 import { withHistory } from 'slate-history'
-
 import { Button, Icon, Toolbar } from './slateComponents'
+import { db } from '../firestore'
 
 import { FormatBold, FormatItalic, FormatUnderlined, Code, FormatListNumbered, FormatQuote, FormatListBulleted, Title }  from '@material-ui/icons'
 import 'bulma/css/bulma.css'
 import './sass/mystyles.scss'
+import * as firebase from 'firebase'
+
+
 
 const HOTKEYS = {
   'mod+b': 'bold',
@@ -22,15 +25,50 @@ const HOTKEYS = {
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 
 const ContentEditor = () => {
-  const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(JSON.parse(localStorage.getItem('content')) || initialValue)
   const renderElement = useCallback(props => <Element {...props} />, [])
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
+  const org = db.collection("organizations").doc("CityMission")
+  //console.log(this.props.orgId)
+  const arrayU =firebase.firestore.FieldValue.arrayUnion
+
+  /*
+  //trying to save to DB
+  const dbSave = (value) => {
+
+    let org=db.collection("organizations").doc(this.props.orgId)
+    const arrayU= firebase.firestore.FieldValue.arrayUnion
+    const newContent=JSON.stringify(value)
+    org.update({
+      content: arrayU(newContent)
+    })
+  }
+
+   */
+
   // want to figure out how to outline the textarea
   return (
     <div className="section is-outlined">
-    <Slate  editor={editor} value={value} onChange={value => setValue(value)}>
+    <Slate
+      editor={editor}
+      value={value}
+      onChange={value => {
+        setValue(value)
+        const content=JSON.stringify(value)
+        localStorage.setItem('content', content)
+      }}
+      onSubmit={value => {
+        const dbContent =JSON.stringify(value)
+        org.update({
+          content: arrayU(dbContent)
+        }).then(r => console.log("sucessfully uploaded"))
+          .catch(function(error){
+            console.error('Error writing doc', error)
+          })
+      }}
+    >
 
       <Toolbar>
         <MarkButton format="bold" icon=<FormatBold/> />
@@ -61,7 +99,7 @@ const ContentEditor = () => {
         }}
       />
       <br/>
-      <button className="button is-primary"> Save </button>
+      <button className="button is-primary" type="submit"> Save </button>
     </Slate>
     </div>
   )

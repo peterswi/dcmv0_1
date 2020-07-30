@@ -47,7 +47,7 @@ class CityMissionAdmin extends Component{
                 </h2>
               </div>
               <div className="container">
-                <ContentEditor/>
+                <ContentEditor orgId={this.state.orgId}/>
                 <br/>
               </div>
             </div>
