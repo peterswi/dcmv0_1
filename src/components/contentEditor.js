@@ -31,7 +31,8 @@ const ContentEditor = () => {
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
-
+  const orgId= this.props.orgId
+  console.log(orgId)
   /*
   //trying to save to DB
 
