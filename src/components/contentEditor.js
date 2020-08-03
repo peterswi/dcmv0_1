@@ -81,21 +81,23 @@ const ContentEditor = () => {
         }}
       />
       <br/>
-      <button className="button is-primary" type="submit"
-              onClick={value=>{
-                const upload=JSON.stringify(value)
-                console.log(upload)
-                //dbSave(upload)
-                //setValue(initialValue)
-                }}>
-        Save
-      </button>
+
     </Slate>
+    <button className="button is-primary" type="submit"
+            onClick={value=>{
+              const upload=value
+              console.log('upload value',upload)
+              //dbSave(upload)
+              //setValue(initialValue)
+            }}>
+      Save
+    </button>
     </div>
   )
 }
 
 const dbSave = (value) => {
+  console.log('button pressed')
 
   let org=db.collection("organizations").doc("CityMission")
   const arrayU= firebase.firestore.FieldValue.arrayUnion

@@ -5,6 +5,7 @@ import '../../sass/mystyles.scss'
 import OrgUser from '../orgUser'
 import ContentEditor from '../../contentEditor'
 import TextEditor from '../../textEditor'
+
 import {app, db} from '../../../firestore'
 
 
@@ -52,9 +53,11 @@ class CityMissionAdmin extends Component{
                 <br/>
               </div>
               <div className="container">
-                <TextEditor orgId={this.state.orgId}/>
+                <TextEditor/>
                 <br/>
               </div>
+
+
             </div>
             <div className="section has-text-centered">
               <div className="is-black">
