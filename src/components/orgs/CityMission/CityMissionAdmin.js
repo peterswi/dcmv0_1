@@ -4,6 +4,7 @@ import '../../sass/mystyles.scss'
 
 import OrgUser from '../orgUser'
 import ContentEditor from '../../contentEditor'
+import TextEditor from '../../textEditor'
 import {app, db} from '../../../firestore'
 
 
@@ -48,6 +49,10 @@ class CityMissionAdmin extends Component{
               </div>
               <div className="container">
                 <ContentEditor orgId={this.state.orgId}/>
+                <br/>
+              </div>
+              <div className="container">
+                <TextEditor orgId={this.state.orgId}/>
                 <br/>
               </div>
             </div>

@@ -31,11 +31,11 @@ const ContentEditor = () => {
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
-  const orgId= this.props.orgId
-  console.log(orgId)
+
   /*
   //trying to save to DB
-
+  const orgId= this.props.orgId
+  console.log(orgId)
 
    */
 
@@ -84,8 +84,9 @@ const ContentEditor = () => {
       <button className="button is-primary" type="submit"
               onClick={value=>{
                 const upload=JSON.stringify(value)
-                dbSave(upload)
-                setValue(initialValue)
+                console.log(upload)
+                //dbSave(upload)
+                //setValue(initialValue)
                 }}>
         Save
       </button>
