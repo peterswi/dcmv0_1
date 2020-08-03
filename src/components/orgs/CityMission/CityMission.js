@@ -12,7 +12,8 @@ class CityMission extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      admin: false
+      admin: false,
+      content: []
     }
   }
 
@@ -27,6 +28,24 @@ class CityMission extends Component {
         console.log("mount", data)
         this.setState({ admin: data[0] })
       })
+
+    //maybe this whole thing needs to be a separate function
+    const orgDoc=db.collection("organizations").doc("CityMission")
+    orgDoc.get().then(function(doc){
+      if(doc.exists){
+        console.log("doc data",doc.data())
+        const content=doc.data().content
+        console.log('content',content)
+        this.setState({content:content})
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+    })
+
+
   }
 
 
@@ -54,6 +73,7 @@ class CityMission extends Component {
         </div>
         <div className="textarea">
           Here is the content for the page
+          {this.state.content[0]}
         </div>
 
 
