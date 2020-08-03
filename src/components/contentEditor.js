@@ -24,13 +24,14 @@ const HOTKEYS = {
 
 const LIST_TYPES = ['numbered-list', 'bulleted-list']
 
-const ContentEditor = () => {
+const ContentEditor = (props) => {
 
   const [value, setValue] = useState(JSON.parse(localStorage.getItem('content')) || initialValue)
   const renderElement = useCallback(props => <Element {...props} />, [])
   const renderLeaf = useCallback(props => <Leaf {...props} />, [])
   const editor = useMemo(() => withHistory(withReact(createEditor())), [])
 
+ // console.log(this.props.orgId)
 
   /*
   //trying to save to DB

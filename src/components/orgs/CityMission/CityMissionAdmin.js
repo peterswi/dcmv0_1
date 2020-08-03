@@ -48,10 +48,13 @@ class CityMissionAdmin extends Component{
                   Admin: add content to your page here.
                 </h2>
               </div>
-              <div className="container">
-                <ContentEditor orgId={this.state.orgId}/>
-                <br/>
-              </div>
+              {/*
+                <div className="container">
+                  <ContentEditor orgId={this.state.orgId}/>
+                  <br/>
+                </div>
+                */
+              }
               <div className="container">
                 <TextEditor/>
                 <br/>
