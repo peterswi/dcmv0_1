@@ -7,8 +7,10 @@ import 'bulma/css/bulma.css'
 import '../../sass/mystyles.scss'
 
 
+let testContent=''
 
 class CityMission extends Component {
+
   constructor (props) {
     super(props)
     this.state = {
@@ -43,6 +45,7 @@ class CityMission extends Component {
           content: content,
           contentArray: this.state.arr.concat(content)
         })
+        testContent=content
 
       } else {
         // doc.data() will be undefined in this case
@@ -100,6 +103,7 @@ class CityMission extends Component {
         </div>
         <div className="textarea">
           {this.state.content}
+          {testContent}
 
         </div>
 
