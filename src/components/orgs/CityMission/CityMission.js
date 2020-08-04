@@ -13,8 +13,11 @@ class CityMission extends Component {
     super(props)
     this.state = {
       admin: false,
-      content: []
+      content: 'The Content',
+      contentArray: []
     }
+
+    //this.componentDidMount=this.componentDidMount.bind(this)
   }
 
   componentDidMount () {
@@ -29,14 +32,18 @@ class CityMission extends Component {
         this.setState({ admin: data[0] })
       })
 
-    //maybe this whole thing needs to be a separate function
-    const orgDoc=db.collection("organizations").doc("CityMission")
-    orgDoc.get().then(function(doc){
+    //trying to mount our content
+
+    db.collection("organizations").doc("CityMission")
+      .get().then(function(doc){
       if(doc.exists){
-        console.log("doc data",doc.data())
-        const content=doc.data().content
+        let content=doc.data().content[0]
         console.log('content',content)
-        this.setState({content:content})
+        this.setState({
+          content: content,
+          contentArray: this.state.arr.concat(content)
+        })
+
       } else {
         // doc.data() will be undefined in this case
         console.log("No such document!");
@@ -46,14 +53,34 @@ class CityMission extends Component {
     })
 
 
+
   }
+/*
+  getContent=() =>{
+    db.collection("organizations").doc("CityMission")
+      .get().then(function(doc){
+      if(doc.exists){
+        console.log("doc data",doc.data())
+        const content=doc.data().content[0]
+        console.log('content',content)
+        this.setState({content: content})
+      } else {
+        // doc.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    }).catch(function(error) {
+      console.log("Error getting document:", error);
+    })
+  }
+
+ */
 
 
 
   render () {
     //need to figure out how to grab the snapshot data from above and then use it down here for authentication
 
-
+    //this.getContent()
     return (
       <div>
         <header className='heading has-text-centered'>
@@ -72,8 +99,8 @@ class CityMission extends Component {
           <br/>
         </div>
         <div className="textarea">
-          Here is the content for the page
-          {this.state.content[0]}
+          {this.state.content}
+
         </div>
 
 
